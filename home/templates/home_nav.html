@@ -1,0 +1,39 @@
+{% load static %}
+<div class="landing-header">
+    <div class="main-menu">
+        <nav class="navbar navbar-expand-sm navbar-light"><a class="navbar-brand" href="#"> <img
+                class="img-fluid" src="{% static 'assets/images/logo/logo-white.png' %}"
+                alt="logo"></a>
+            <button class="navbar-toggler d-xl-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true"
+                    aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active"><a class="nav-link"
+                                                   href="{%  url 'chat' %}">Chat<span
+                            class="sr-only">(current)</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                                            href="https://pixelstrap.freshdesk.com/support/home">Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <form class="form-inline support-res" target="_blank"
+                              action="https://docs.google.com/forms/d/e/1FAIpQLSe6hKUXw_By-pg7yabL0FxoTM02ZPTxoXy8PE3yboRuUCuyeA/viewform">
+                            <button class="nav-link js-scroll">Hire Us</button>
+                        </form>
+                    </li>
+                    <li class="nav-item"><a class="nav-link"
+                                            href="http://themes.pixelstrap.com/chitchat/Documentation/">Document</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link"
+                                            href="{% url 'login' %}">login</a>
+                    </li>
+                </ul>
+                <div class="btn_purchase"><a class="btn"
+                                             href="https://themeforest.net/user/pixelstrap/portfolio">Purchase</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
