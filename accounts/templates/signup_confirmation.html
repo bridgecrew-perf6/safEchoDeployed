@@ -18,65 +18,10 @@
                                      src="{% static 'assets/images/logo/landing-logo.png' %}"
                                      alt="images">
                             </div>
-                            <h3>Hello Everyone , We are Chitchat</h3>
-                            <h4>Wellcome to chitchat please login to your account.</h4>
-                            <form  method="POST">
-                                {% csrf_token %}
-                                <div class="form-group">
-                                    <label class="col-form-label" for="inputEmail3">Username</label>
-                                    {{ form.username }}
-                                    {% if form.errors.username %}
-                                        <p> {{ form.errors.username }} </p>
-                                    {% endif %}
-                                    {#                                    <input class="form-control" id="uname" type="text" placeholder="Demo@123">#}
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-form-label" for="inputEmail3">Email Address</label>
-                                    {{ form.email }}
-                                    {% if form.errors.email %}
-                                        <p> {{ form.errors.email }} </p>
-                                    {% endif %}
-                                    {#                                    <input class="form-control" id="uname" type="text" placeholder="Demo@123">#}
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-form-label" for="inputPassword3">Password</label><span> </span>
-                                    {{ form.password1 }}
-                                    {% if form.errors.password1 %}
-                                        <p> {{ form.errors.password1 }} </p>
-                                    {% endif %}
-
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-form-label" for="inputPassword3"> Confirm
-                                        Password</label><span> </span>
-                                    {{ form.password2 }}
-                                    {% if form.errors.password2 %}
-                                        <p> {{ form.errors.password2 }} </p>
-                                    {% endif %}
-                                </div>
-                                <div class="form-group">
-                                    <div class="buttons">
-                                        <button type="submit" class="btn btn-primary signpbtn">Signup
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="medialogo">
-                                    <ul>
-                                        <li><a class="icon-btn btn-danger button-effect" href="#"><i
-                                                class="fa fa-google"></i></a></li>
-                                        <li><a class="icon-btn btn-primary button-effect" href="#"><i
-                                                class="fa fa-twitter"></i></a></li>
-                                        <li><a class="icon-btn btn-facebook button-effect" href="#"><i
-                                                class="fa fa-facebook-f"></i></a></li>
-                                    </ul>
-                                </div>
-                            </form>
-                            <div class="line">
-                                <h6>OR Connect with</h6>
-                            </div>
-                            <div class="termscondition">
-                                <h4><span>*</span>Terms and condition<b>&amp;</b>Privacy policy</h4>
-                            </div>
+                            <h3>Signup Email Confirmation</h3>
+                            <h4>Please confirm your email address to complete the registration.</h4>
+                            <p>Do not forget to check Spam / Junk emails in case you do not receive our activation
+                                email.</p>
                         </div>
                     </div>
                     <div class="right-page">
@@ -133,4 +78,5 @@
             </div>
         </div>
     </div>
+
 {% endblock %}
