@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>Hello {{ user.first_name |title }} {{ user.last_name |title }},</h1>
+    <p>Thank you for creating an account
+
+        You are just one step away from completing your
+        registration.Please </p>
+        <a href="http://{{ domain }}{% url 'activate' uidb64=uid token=token %}">activate</a>
+       <p> your account to join
+        Regards,
+        jamshaid iqbal</p>
+
+</body>
+</html>

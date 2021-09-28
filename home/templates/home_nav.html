@@ -10,9 +10,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active"><a class="nav-link"
-                                                   href="{%  url 'chat' %}">Chat<span
-                            class="sr-only">(current)</span></a></li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item active"><a class="nav-link"
+                                                       href="{% url 'chat' %}">Chat<span
+                                class="sr-only">(current)</span></a></li>
+                    {% endif %}
+
                     <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
                     <li class="nav-item"><a class="nav-link"
                                             href="https://pixelstrap.freshdesk.com/support/home">Support</a>
@@ -26,9 +29,11 @@
                     <li class="nav-item"><a class="nav-link"
                                             href="http://themes.pixelstrap.com/chitchat/Documentation/">Document</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link"
-                                            href="{% url 'login' %}">login</a>
-                    </li>
+                    {% if not user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link"
+                                                href="{% url 'login' %}">login</a>
+                        </li>
+                    {% endif %}
                 </ul>
                 <div class="btn_purchase"><a class="btn"
                                              href="https://themeforest.net/user/pixelstrap/portfolio">Purchase</a>
