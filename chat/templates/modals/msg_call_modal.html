@@ -1,0 +1,94 @@
+{% load static %}
+<div class="modal fade add-popup msg-chat-modal" id="msgcallModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title">
+               Create New Message</h2>
+            <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="chat-msg-search">
+              <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon20"/>
+                <div class="input-group-append"><span class="input-group-text" id="basic-addon20">@</span></div>
+              </div>
+            </div>
+            <ul class="call-log-main custom-scroll">
+              <li class="active">
+                <div class="call-box">
+                  <div class="profile offline"><img class="bg-img" src="{% static 'assets/images/contact/2.jpg' %}" alt="Avatar"/></div>
+                  <div class="details">
+                    <h5>Jony Lynetin</h5>
+                    <h6> <i data-feather="arrow-down-left"></i>3:30 pm</h6>
+                  </div>
+                  <div class="call-status">
+                    <div class="icon-btn btn-outline-success button-effect btn-sm"><i data-feather="phone"></i></div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="call-box">
+                  <div class="profile online"><img class="bg-img" src="{% static 'assets/images/contact/1.jpg' %}" alt="Avatar"/></div>
+                  <div class="details">
+                    <h5>Jony Lynetin</h5>
+                    <h6> <i data-feather="arrow-down-right"></i>3:10 pm</h6>
+                  </div>
+                  <div class="call-status">
+                    <div class="icon-btn btn-outline-success button-effect btn-sm"><i data-feather="video"></i></div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="call-box">
+                  <div class="profile offline"><img class="bg-img" src="{% static 'assets/images/contact/2.jpg' %}" alt="Avatar"/></div>
+                  <div class="details">
+                    <h5>Jony Lynetin</h5>
+                    <h6> <i class="missed" data-feather="corner-left-down"></i>3:00 pm</h6>
+                  </div>
+                  <div class="call-status">
+                    <div class="icon-btn btn-outline-danger button-effect btn-sm"><i data-feather="phone"></i></div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="call-box">
+                  <div class="profile online"><img class="bg-img" src="{% static 'assets/images/contact/1.jpg' %}" alt="Avatar"/></div>
+                  <div class="details">
+                    <h5>Jony Lynetin</h5>
+                    <h6> <i data-feather="arrow-down-right"></i>3:00 pm</h6>
+                  </div>
+                  <div class="call-status">
+                    <div class="icon-btn btn-outline-success button-effect btn-sm"><i data-feather="video"></i></div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="call-box">
+                  <div class="profile offline"><img class="bg-img" src="{% static 'assets/images/contact/2.jpg' %}" alt="Avatar"/></div>
+                  <div class="details">
+                    <h5>Jony Lynetin</h5>
+                    <h6> <i data-feather="arrow-down-right"></i>3:00 pm</h6>
+                  </div>
+                  <div class="call-status">
+                    <div class="icon-btn btn-outline-success button-effect btn-sm"><i data-feather="phone"></i></div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="call-box">
+                  <div class="profile online"><img class="bg-img" src="{% static 'assets/images/contact/1.jpg' %}" alt="Avatar"/></div>
+                  <div class="details">
+                    <h5>Jony Lynetin</h5>
+                    <h6> <i data-feather="arrow-down-right"></i>3:00 pm</h6>
+                  </div>
+                  <div class="call-status">
+                    <div class="icon-btn btn-outline-success button-effect btn-sm"><i data-feather="video"></i></div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,781 @@
+{% load static  %}
+<div class="chat-content tabto active">
+                <div class="messages custom-scroll" id="chating">
+                    <div class="contact-details">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="media left">
+                                    <div class="media-left me-3">
+                                        <div class="profile online menu-trigger"><img class="bg-img"
+                                                                                      src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                                      alt="Avatar"/></div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5>Josephin water</h5>
+                                        <div class="badge badge-success">Active</div>
+                                    </div>
+                                    <div class="media-right">
+                                        <ul>
+                                            <li><a class="icon-btn btn-light button-effect mute" href="#"><i
+                                                    class="fa fa-volume-up"></i></a></li>
+                                            <li><a class="icon-btn btn-light search search-right" href="#"><i
+                                                    data-feather="search"></i></a>
+                                                <form class="form-inline search-form">
+                                                    <div class="form-group">
+                                                        <input class="form-control-plaintext" type="search"
+                                                               placeholder="Search.."/>
+                                                        <div class="icon-close close-search"></div>
+                                                    </div>
+                                                </form>
+                                            </li>
+                                            <li><a class="icon-btn btn-light button-effect mobile-sidebar" href="#"><i
+                                                    data-feather="chevron-left"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <ul class="calls text-end">
+                                    <li><a class="icon-btn btn-light button-effect" href="#"
+                                           data-tippy-content="Quick Audio Call" data-bs-toggle="modal"
+                                           data-bs-target="#audiocall"><i data-feather="phone"></i></a></li>
+                                    <li><a class="icon-btn btn-light button-effect" href="#"
+                                           data-tippy-content="Quick Video Call" data-bs-toggle="modal"
+                                           data-bs-target="#videocall"><i data-feather="video"></i></a></li>
+                                    <li><a class="icon-btn btn-light button-effect apps-toggle" href="#"
+                                           data-tippy-content="All Apps"><i class="ti-layout-grid2"></i></a></li>
+                                    <li class="chat-friend-toggle"><a
+                                            class="icon-btn btn-light bg-transparent button-effect outside" href="#"
+                                            data-tippy-content="Quick action"><i data-feather="more-vertical"></i></a>
+                                        <div class="chat-frind-content">
+                                            <ul>
+                                                <li><a class="icon-btn btn-outline-primary button-effect btn-sm"
+                                                       href="#"><i data-feather="user"></i></a>
+                                                    <h5>Profile</h5>
+                                                </li>
+                                                <li><a class="icon-btn btn-outline-success button-effect btn-sm"
+                                                       href="#"><i data-feather="plus-circle"></i></a>
+                                                    <h5>Archive</h5>
+                                                </li>
+                                                <li><a class="icon-btn btn-outline-danger button-effect btn-sm"
+                                                       href="#"><i data-feather="trash-2"></i></a>
+                                                    <h5>Delete</h5>
+                                                </li>
+                                                <li><a class="icon-btn btn-outline-light button-effect btn-sm" href="#"><i
+                                                        data-feather="slash"></i></a>
+                                                    <h5>Block</h5>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-chat">
+                        <ul class="chatappend">
+                            <li class="replies">
+                                <div class="media">
+                                    <div class="profile me-4"><img class="bg-img"
+                                                                   src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                   alt="Avatar"/></div>
+                                    <div class="media-body">
+                                        <div class="contact-name">
+                                            <h5>Alan josheph</h5>
+                                            <h6>01:40 AM</h6>
+                                            <ul class="msg-box">
+                                                <li class="msg-setting-main">
+                                                    <div class="msg-dropdown-main">
+                                                        <div class="msg-setting"><i class="ti-more-alt"></i></div>
+                                                        <div class="msg-dropdown">
+                                                            <ul>
+                                                                <li><a href="#"><i class="fa fa-share"></i>forward</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fa fa-clone"></i>copy</a></li>
+                                                                <li><a href="#"><i class="fa fa-star-o"></i>rating</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="ti-trash"></i>delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <h5>Hi I am Alan,</h5>
+                                                </li>
+                                                <li class="msg-setting-main">
+                                                    <h5> your personal assistant to help you &#128512; </h5>
+                                                    <div class="badge badge-success sm ms-2"> R</div>
+                                                    <div class="msg-dropdown-main">
+                                                        <div class="msg-setting"><i class="ti-more-alt"></i></div>
+                                                        <div class="msg-dropdown">
+                                                            <ul>
+                                                                <li><a href="#"><i class="fa fa-share"></i>forward</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fa fa-clone"></i>copy</a></li>
+                                                                <li><a href="#"><i class="fa fa-star-o"></i>rating</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="ti-trash"></i>delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="sent">
+                                <div class="media">
+                                    <div class="profile me-4"><img class="bg-img"
+                                                                   src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                   alt="Avatar"/></div>
+                                    <div class="media-body">
+                                        <div class="contact-name">
+                                            <h5>Josephin water</h5>
+                                            <h6>01:35 AM</h6>
+                                            <ul class="msg-box">
+                                                <li class="msg-setting-main">
+                                                    <h5>Hi I am Josephin, can you help me to find best chat app?. </h5>
+                                                    <div class="msg-dropdown-main">
+                                                        <div class="msg-setting"><i class="ti-more-alt"></i></div>
+                                                        <div class="msg-dropdown">
+                                                            <ul>
+                                                                <li><a href="#"><i class="fa fa-share"></i>forward</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fa fa-clone"></i>copy</a></li>
+                                                                <li><a href="#"><i class="fa fa-star-o"></i>rating</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="ti-trash"></i>delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="msg-setting-main">
+                                                    <h5> it should from elite auther &#128519;</h5>
+                                                    <div class="badge badge-success sm ms-2"> R</div>
+                                                    <div class="msg-dropdown-main">
+                                                        <div class="msg-setting"><i class="ti-more-alt"></i></div>
+                                                        <div class="msg-dropdown">
+                                                            <ul>
+                                                                <li><a href="#"><i class="fa fa-share"></i>forward</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fa fa-clone"></i>copy</a></li>
+                                                                <li><a href="#"><i class="fa fa-star-o"></i>rating</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="ti-trash"></i>delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="replies">
+                                <div class="media">
+                                    <div class="profile me-4"><img class="bg-img"
+                                                                   src="{% static 'assets/images/avtar/1.jpg' %}"
+                                                                   alt="Avatar"/></div>
+                                    <div class="media-body">
+                                        <div class="contact-name">
+                                            <h5>Alan josheph</h5>
+                                            <h6>01:40 AM</h6>
+                                            <ul class="msg-box">
+                                                <li class="msg-setting-main">
+                                                    <div class="msg-dropdown-main">
+                                                        <div class="msg-setting"><i class="ti-more-alt"></i></div>
+                                                        <div class="msg-dropdown">
+                                                            <ul>
+                                                                <li><a href="#"><i class="fa fa-share"></i>forward</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fa fa-clone"></i>copy</a></li>
+                                                                <li><a href="#"><i class="fa fa-star-o"></i>rating</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="ti-trash"></i>delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <h5>Sure, chitchat is best theme for chating project, you can it
+                                                        check<a class="ms-1"
+                                                                href="https://themeforest.net/user/pixelstrap/portfolio"
+                                                                target="_blank">here.</a></h5>
+                                                </li>
+                                                <li class="msg-setting-main">
+                                                    <div class="document"><i
+                                                            class="fa fa-file-excel-o font-primary"></i>
+                                                        <div class="details">
+                                                            <h5>Document.xlsx</h5>
+                                                            <h6>25mb Seprate file</h6>
+                                                        </div>
+                                                        <div class="icon-btns"><a class="icon-btn btn-outline-light"
+                                                                                  href="{% static 'assets/doc/Document.xlsx' %}"
+                                                                                  target="_blank"><i
+                                                                data-feather="download"> </i></a></div>
+                                                    </div>
+                                                    <div class="badge badge-dark sm ms-2"> D</div>
+                                                    <div class="msg-dropdown-main">
+                                                        <div class="msg-setting"><i class="ti-more-alt"></i></div>
+                                                        <div class="msg-dropdown">
+                                                            <ul>
+                                                                <li><a href="#"><i class="fa fa-share"></i>forward</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fa fa-clone"></i>copy</a></li>
+                                                                <li><a href="#"><i class="fa fa-star-o"></i>rating</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="ti-trash"></i>delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="sent">
+                                <div class="media">
+                                    <div class="profile me-4"><img class="bg-img"
+                                                                   src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                   alt="Avatar"/></div>
+                                    <div class="media-body">
+                                        <div class="contact-name">
+                                            <h5>Josephin water</h5>
+                                            <h6>01:42 AM</h6>
+                                            <ul class="msg-box">
+                                                <li class="msg-setting-main">
+                                                    <h5>I think it's best for my project.</h5>
+                                                    <div class="msg-dropdown-main">
+                                                        <div class="msg-setting"><i class="ti-more-alt"></i></div>
+                                                        <div class="msg-dropdown">
+                                                            <ul>
+                                                                <li><a href="#"><i class="fa fa-share"></i>forward</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fa fa-clone"></i>copy</a></li>
+                                                                <li><a href="#"><i class="fa fa-star-o"></i>rating</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="ti-trash"></i>delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="msg-setting-main">
+                                                    <ul class="auto-gallery">
+                                                        <li><img class="bg-img"
+                                                                 src="{% static 'assets/images/media/1.jpg' %}"
+                                                                 alt="Avatar"/></li>
+                                                        <li><img class="bg-img"
+                                                                 src="{% static 'assets/images/media/2.jpg' %}"
+                                                                 alt="Avatar"/></li>
+                                                        <li><img class="bg-img"
+                                                                 src="{% static 'assets/images/media/3.jpg' %}"
+                                                                 alt="Avatar"/></li>
+                                                    </ul>
+                                                    <div class="refresh-block">
+                                                        <div class="badge badge-outline-primary refresh sm ms-2"><i
+                                                                data-feather="rotate-cw"></i></div>
+                                                        <div class="badge badge-danger sm ms-2">F</div>
+                                                    </div>
+                                                    <div class="msg-dropdown-main">
+                                                        <div class="msg-setting"><i class="ti-more-alt"></i></div>
+                                                        <div class="msg-dropdown">
+                                                            <ul>
+                                                                <li><a href="#"><i class="fa fa-share"></i>forward</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fa fa-clone"></i>copy</a></li>
+                                                                <li><a href="#"><i class="fa fa-star-o"></i>rating</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="ti-trash"></i>delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="replies">
+                                <div class="media">
+                                    <div class="profile me-4"><img class="bg-img"
+                                                                   src="{% static 'assets/images/avtar/1.jpg' %}"
+                                                                   alt="Avatar"/></div>
+                                    <div class="media-body">
+                                        <div class="contact-name">
+                                            <h5>Alan josheph</h5>
+                                            <h6>01:45 AM</h6>
+                                            <ul class="msg-box">
+                                                <li class="msg-setting-main">
+                                                    <h5>If you have any other query then feel free to ask us.</h5>
+                                                    <div class="msg-dropdown-main">
+                                                        <div class="msg-setting"><i class="ti-more-alt"></i></div>
+                                                        <div class="msg-dropdown">
+                                                            <ul>
+                                                                <li><a href="#"><i class="fa fa-share"></i>forward</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fa fa-clone"></i>copy</a></li>
+                                                                <li><a href="#"><i class="fa fa-star-o"></i>rating</a>
+                                                                </li>
+                                                                <li><a href="#"><i class="ti-trash"></i>delete </a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="messages custom-scroll active" id="blank">
+                    <div class="contact-details">
+                        <div class="row">
+                            <div class="col">
+                                <div class="media left">
+                                    <div class="media-left me-3">
+                                        <div class="profile online menu-trigger"><img class="bg-img"
+                                                                                      src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                                      alt="Avatar"/></div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5>Josephin water</h5>
+                                        <h6>Last Seen 5 hours</h6>
+                                    </div>
+                                    <div class="media-right">
+                                        <ul>
+                                            <li><a class="icon-btn btn-light button-effect mute" href="#"><i
+                                                    class="fa fa-volume-up"></i></a></li>
+                                            <li><a class="icon-btn btn-light search search-right" href="#"> <i
+                                                    data-feather="search"></i></a>
+                                                <form class="form-inline search-form">
+                                                    <div class="form-group">
+                                                        <input class="form-control-plaintext" type="search"
+                                                               placeholder="Search.."/>
+                                                        <div class="icon-close close-search"></div>
+                                                    </div>
+                                                </form>
+                                            </li>
+                                            <li><a class="icon-btn btn-light button-effect mobile-sidebar" href="#"><i
+                                                    data-feather="chevron-left"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <ul class="calls text-end">
+                                    <li><a class="icon-btn btn-light button-effect" href="#"
+                                           data-tippy-content="Quick Audio Call" data-bs-toggle="modal"
+                                           data-bs-target="#audiocall"><i data-feather="phone"></i></a></li>
+                                    <li><a class="icon-btn btn-light button-effect" href="#"
+                                           data-tippy-content="Quick Video Call" data-bs-toggle="modal"
+                                           data-bs-target="#videocall"><i data-feather="video"></i></a></li>
+                                    <li><a class="icon-btn btn-light button-effect apps-toggle" href="#"
+                                           data-tippy-content="All Apps"><i class="ti-layout-grid2"></i></a></li>
+                                    <li class="chat-friend-toggle"><a
+                                            class="icon-btn btn-light bg-transparent button-effect outside" href="#"
+                                            data-tippy-content="Quick action"><i data-feather="more-vertical"></i></a>
+                                        <div class="chat-frind-content">
+                                            <ul>
+                                                <li><a class="icon-btn btn-outline-primary button-effect btn-sm"
+                                                       href="#"><i data-feather="user"></i></a>
+                                                    <h5>profile</h5>
+                                                </li>
+                                                <li><a class="icon-btn btn-outline-success button-effect btn-sm"
+                                                       href="#"><i data-feather="plus-circle"></i></a>
+                                                    <h5>archive</h5>
+                                                </li>
+                                                <li><a class="icon-btn btn-outline-danger button-effect btn-sm"
+                                                       href="#"><i data-feather="trash-2"></i></a>
+                                                    <h5>delete</h5>
+                                                </li>
+                                                <li><a class="icon-btn btn-outline-light button-effect btn-sm" href="#"><i
+                                                        data-feather="slash"></i></a>
+                                                    <h5>block</h5>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-chat">
+                        <div class="rightchat animat-rate">
+                            <div class="bg_circle">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="cross"></div>
+                            <div class="cross1"></div>
+                            <div class="cross2"></div>
+                            <div class="dot"></div>
+                            <div class="dot1"></div>
+                        </div>
+                    </div>
+                    <div class="call-list-center"><img src="{% static 'assets/images/chat.png' %}" alt=""/>
+                        <div class="animated-bg"><i></i><i></i><i></i></div>
+                        <p>Select a chat to read messages</p>
+                    </div>
+                </div>
+                <div class="messages custom-scroll" id="group_chat">
+                    <div class="contact-details">
+                        <div class="row">
+                            <div class="col">
+                                <div class="media left">
+                                    <div class="media-left me-3">
+                                        <div class="profile online menu-trigger"><img class="bg-img"
+                                                                                      src="{% static 'assets/images/avtar/family.jpg' %}"
+                                                                                      alt="Avatar"/></div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5>Family Ties</h5>
+                                        <h6>Last Seen 2 hours</h6>
+                                    </div>
+                                    <div class="media-right">
+                                        <ul>
+                                            <li><a class="icon-btn btn-light button-effect mute" href="#"><i
+                                                    class="fa fa-volume-up"></i></a></li>
+                                            <li><a class="icon-btn btn-light search search-right" href="#"> <i
+                                                    data-feather="search"></i></a>
+                                                <form class="form-inline search-form">
+                                                    <div class="form-group">
+                                                        <input class="form-control-plaintext" type="search"
+                                                               placeholder="Search.."/>
+                                                        <div class="icon-close close-search"></div>
+                                                    </div>
+                                                </form>
+                                            </li>
+                                            <li><a class="icon-btn btn-light button-effect mobile-sidebar" href="#"><i
+                                                    data-feather="chevron-left"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <ul class="calls text-end">
+                                    <li><a class="icon-btn btn-light button-effect" href="#"
+                                           data-tippy-content="Quick Audio Call" data-bs-toggle="modal"
+                                           data-bs-target="#confercall"><i data-feather="phone"></i></a></li>
+                                    <li><a class="icon-btn btn-light button-effect" href="#"
+                                           data-tippy-content="Quick Video Call" data-bs-toggle="modal"
+                                           data-bs-target="#confvideocl"><i data-feather="video"></i></a></li>
+                                    <li><a class="icon-btn btn-light button-effect apps-toggle" href="#"
+                                           data-tippy-content="All Apps"><i class="ti-layout-grid2"></i></a></li>
+                                    <li class="chat-friend-toggle"><a
+                                            class="icon-btn btn-light bg-transparent button-effect outside" href="#"
+                                            data-tippy-content="Quick action"><i data-feather="more-vertical"></i></a>
+                                        <div class="chat-frind-content">
+                                            <ul>
+                                                <li><a class="icon-btn btn-outline-primary button-effect btn-sm"
+                                                       href="#"><i data-feather="user"></i></a>
+                                                    <h5>profile</h5>
+                                                </li>
+                                                <li><a class="icon-btn btn-outline-success button-effect btn-sm"
+                                                       href="#"><i data-feather="plus-circle"></i></a>
+                                                    <h5>archive</h5>
+                                                </li>
+                                                <li><a class="icon-btn btn-outline-danger button-effect btn-sm"
+                                                       href="#"><i data-feather="trash-2"></i></a>
+                                                    <h5>delete</h5>
+                                                </li>
+                                                <li><a class="icon-btn btn-outline-light button-effect btn-sm" href="#"><i
+                                                        data-feather="slash"></i></a>
+                                                    <h5>block</h5>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-chat">
+                        <div class="rightchat animat-rate">
+                            <div class="bg_circle">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="cross"></div>
+                            <div class="cross1"></div>
+                            <div class="cross2"></div>
+                            <div class="dot"></div>
+                            <div class="dot1"></div>
+                        </div>
+                    </div>
+                    <div class="call-list-center"><img src="{% static 'assets/images/chat.png' %}" alt=""/>
+                        <div class="animated-bg"><i></i><i></i><i></i></div>
+                        <p>Select a chat to read messages</p>
+                    </div>
+                </div>
+                <div class="message-input">
+                    <div class="wrap emojis-main"><a
+                            class="icon-btn btn-outline-primary button-effect me-3 toggle-sticker outside" href="#">
+                        <svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="2158px" height="2148px"
+                             viewbox="0 0 2158 2148" enable-background="new 0 0 2158 2148" xml:space="preserve">
+                  <path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="60"
+                        stroke-miterlimit="10"
+                        d="M699,693                        c0,175.649,0,351.351,0,527c36.996,0,74.004,0,111,0c18.058,0,40.812-2.485,57,1c11.332,0.333,22.668,0.667,34,1                        c7.664,2.148,20.769,14.091,25,20c8.857,12.368,6,41.794,6,62c0,49.329,0,98.672,0,148c175.649,0,351.351,0,527,0                        c0-252.975,0-506.025,0-759C1205.692,693,952.308,693,699,693z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M886,799c59.172-0.765,93.431,25.289,111,66c6.416,14.867,14.612,39.858,9,63                        c-2.391,9.857-5.076,20.138-9,29c-15.794,35.671-47.129,53.674-90,63c-20.979,4.563-42.463-4.543-55-10                        c-42.773-18.617-85.652-77.246-59-141c10.637-25.445,31.024-49,56-60c7.999-2.667,16.001-5.333,24-8                        C877.255,799.833,882.716,801.036,886,799z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M1258,799c59.172-0.765,93.431,25.289,111,66c6.416,14.867,14.612,39.858,9,63                        c-2.391,9.857-5.076,20.138-9,29c-15.794,35.671-47.129,53.674-90,63c-20.979,4.563-42.463-4.543-55-10                        c-42.773-18.617-85.652-77.246-59-141c10.637-25.445,31.024-49,56-60c7.999-2.667,16.001-5.333,24-8                        C1249.255,799.833,1254.716,801.036,1258,799z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M1345,1184c-0.723,18.71-11.658,29.82-20,41c-18.271,24.489-50.129,37.183-83,47                        c-7.333,1-14.667,2-22,3c-12.013,2.798-33.636,5.15-44,3c-11.332-0.333-22.668-0.667-34-1c-15.332-3-30.668-6-46-9                        c-44.066-14.426-80.944-31.937-110-61c-22.348-22.353-38.992-45.628-37-90c0.667,0,1.333,0,2,0c9.163,5.585,24.723,3.168,36,6                        c26.211,6.583,54.736,7.174,82,14c34.068,8.53,71.961,10.531,106,19c9.999,1.333,20.001,2.667,30,4c26.193,6.703,54.673,7.211,82,14                        C1304.894,1178.445,1325.573,1182.959,1345,1184z"></path>
+                            <polygon fill-rule="evenodd" clip-rule="evenodd"
+                                     points="668.333,1248.667 901.667,1482 941.667,1432 922.498,1237.846                         687,1210.667 "></polygon>
+                </svg>
+                    </a>
+                        <div class="dot-btn dot-primary me-3"><a
+                                class="icon-btn btn-outline-primary button-effect toggle-emoji" href="#"><i
+                                data-feather="smile"></i></a></div>
+                        <div class="contact-poll"><a class="icon-btn btn-outline-primary me-4 outside" href="#"><i
+                                class="fa fa-plus"></i></a>
+                            <div class="contact-poll-content">
+                                <ul>
+                                    <li><a href="#"><i data-feather="image"></i>gallery</a></li>
+                                    <li><a href="#"><i data-feather="camera"></i>camera</a></li>
+                                    <li><a data-bs-toggle="modal" data-bs-target="#snippetModal"><i
+                                            data-feather="code"> </i>Code Snippest</a></li>
+                                    <li><a href="#"><i data-feather="user"> </i>contact</a></li>
+                                    <li><a href="#"><i data-feather="map-pin"> </i>location</a></li>
+                                    <li><a href="#"><i data-feather="clipboard"> </i>document</a></li>
+                                    <li><a data-bs-toggle="modal" data-bs-target="#pollModal"><i
+                                            data-feather="bar-chart-2"> </i>poll</a></li>
+                                    <li><a href="#"><i data-feather="paperclip"> </i>attach</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <input class="setemoj" id="setemoj" type="text" placeholder="Write your message..."/><a
+                                class="icon-btn btn-outline-primary button-effect me-3 ms-3" href="#"><i
+                                data-feather="mic"> </i></a>
+                        <button class="submit icon-btn btn-primary disabled" id="send-msg" disabled="disabled"><i
+                                data-feather="send"> </i></button>
+                        <div class="emojis-contain">
+                            <div class="emojis-sub-contain custom-scroll">
+                                <ul>
+                                    <li>&#128512;</li>
+                                    <li>&#128513;</li>
+                                    <li>&#128514;</li>
+                                    <li>&#128515;</li>
+                                    <li>&#128516;</li>
+                                    <li>&#128517;</li>
+                                    <li>&#128518;</li>
+                                    <li>&#128519;</li>
+                                    <li>&#128520;</li>
+                                    <li>&#128521;</li>
+                                    <li>&#128522;</li>
+                                    <li>&#128523;</li>
+                                    <li>&#128524;</li>
+                                    <li>&#128525;</li>
+                                    <li>&#128526;</li>
+                                    <li>&#128527;</li>
+                                    <li>&#128528;</li>
+                                    <li>&#128529;</li>
+                                    <li>&#128530;</li>
+                                    <li>&#128531;</li>
+                                    <li>&#128532;</li>
+                                    <li>&#128533;</li>
+                                    <li>&#128534;</li>
+                                    <li>&#128535;</li>
+                                    <li>&#128536;</li>
+                                    <li>&#128537;</li>
+                                    <li>&#128538;</li>
+                                    <li>&#128539;</li>
+                                    <li>&#128540;</li>
+                                    <li>&#128541;</li>
+                                    <li>&#128542;</li>
+                                    <li>&#128543;</li>
+                                    <li>&#128544;</li>
+                                    <li>&#128545;</li>
+                                    <li>&#128546;</li>
+                                    <li>&#128547;</li>
+                                    <li>&#128549;</li>
+                                    <li>&#128550;</li>
+                                    <li>&#128551;</li>
+                                    <li>&#128552;</li>
+                                    <li>&#128553;</li>
+                                    <li>&#128554;</li>
+                                    <li>&#128555;</li>
+                                    <li>&#128557;</li>
+                                    <li>&#128558;</li>
+                                    <li>&#128559;</li>
+                                    <li>&#128560;</li>
+                                    <li>&#128561;</li>
+                                    <li>&#128562;</li>
+                                    <li>&#128563;</li>
+                                    <li>&#128564;</li>
+                                    <li>&#128565;</li>
+                                    <li>&#128566;</li>
+                                    <li>&#128567;</li>
+                                    <li>&#128568;</li>
+                                    <li>&#128569;</li>
+                                    <li>&#128570;</li>
+                                    <li>&#128571;</li>
+                                    <li>&#128572;</li>
+                                    <li>&#128573;</li>
+                                    <li>&#128574;</li>
+                                    <li>&#128576;</li>
+                                    <li>&#128579;</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sticker-contain">
+                            <div class="sticker-sub-contain custom-scroll">
+                                <ul>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/1.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/2.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/3.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/3.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/4.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/5.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/6.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/7.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/8.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/9.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/10.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/11.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/12.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/13.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/14.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/15.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/16.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/17.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/18.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/19.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/20.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/21.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/22.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/23.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/24.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/25.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/26.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/27.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/28.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/29.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/30.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/31.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/32.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/33.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/34.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/35.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/36.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/37.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/38.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/39.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/40.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/41.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/42.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                    <li><a href="#"><img class="img-fluid"
+                                                         src="{% static 'assets/images/sticker/43.gif' %}"
+                                                         alt="sticker"/></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

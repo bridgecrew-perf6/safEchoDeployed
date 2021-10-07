@@ -1,0 +1,46 @@
+{% load static %}
+<div class="modal fade add-popup create-todo-main-modal" id="createtodoModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title">
+               Today's ToDo</h2>
+            <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form class="default-form">
+              <div class="todo-task">
+                <h5>Felling Lonely</h5>
+                <div class="todo-main-content">
+                  <div class="form-group">
+                    <input type="checkbox" aria-label="Checkbox for following text input"/>
+                    <input class="w-100" id="user_input123" type="text" placeholder="Fill Your Fillings "/>
+                  </div>
+                  <div class="drop-picker">
+                    <div class="dropdown currency" tabindex="1">
+                      <div class="select"><span>Assign To</span></div>
+                      <input type="hidden" name="currency"/>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-divider">
+                          <div class="fa fa-user text-muted"></div>
+                          <h5 class="text-muted">Assign To</h5>
+                        </li>
+                        <li>Josephin john</li>
+                        <li>Lynetin john</li>
+                        <li>Sufiya john</li>
+                        <li>Jhon john</li>
+                      </ul>
+                    </div>
+                    <input class="datepicker-here form-control digits" type="url" data-language="en" placeholder="Due date"/>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-danger button-effect btn-sm" type="button">Save</button>
+            <button class="btn btn-primary button-effect btn-sm" type="button" data-bs-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
