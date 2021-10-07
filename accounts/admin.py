@@ -12,9 +12,9 @@ class UserAdmin(admin.ModelAdmin):
 
 @admin.register(Profile)
 class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ['id', 'get_email']
+    list_display = ['id', 'user']
     ordering = ['id']
     search_fields = ['id', 'user']
 
-    def get_email(self, obj):
-        return obj.email
+    # def get_email(self, obj):
+    #     return user.email

@@ -1,0 +1,38 @@
+{% load static %}
+<div class="modal notes-modal-main add-popup" id="notesModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title"><i class="ti-bookmark-alt"></i>notes</h2>
+                <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body custom-scroll p-0">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Inline Editor</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="cke_editable cke_editable_inline cke_contents_ltr cke_show_borders" id="area1"
+                             contenteditable="true" tabindex="0" spellcheck="false" role="textbox"
+                             aria-label="Rich Text Editor, area1" title="Rich Text Editor, area1">
+                            <h1>Your title</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at vulputate urna, sed
+                                dignissim arcu. Aliquam at ligula imperdiet, faucibus ante a, interdum enim. Sed in
+                                mauris a lectus lobortis condimentum. Sed in nunc magna. Quisque massa urna, cursus
+                                vitae commodo eget, rhoncus nec erat. Sed sapien turpis, elementum sit amet elit vitae,
+                                elementum gravida eros. In ornare tempus nibh ut lobortis. Nam venenatis justo ex, vitae
+                                vulputate neque laoreet a.</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-danger button-effect btn-sm" type="button">Save</button>
+                        <button class="btn btn-primary button-effect btn-sm" type="button" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

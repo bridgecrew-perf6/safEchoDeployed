@@ -45,4 +45,4 @@ class ProfileForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        fields = ('user', 'dob', 'phone_number', 'country', 'address', 'postal_code', 'city', 'role', 'marketing')
+        fields = ('dob', 'phone_number', 'country', 'address', 'postal_code', 'city', 'role', 'marketing')

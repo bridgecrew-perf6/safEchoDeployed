@@ -1,0 +1,45 @@
+{% load static %}
+<div class="modal pol-modal-main add-popup" id="pollModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title"><i data-feather="bar-chart-2"></i>poll</h2>
+                <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="default-form">
+                    <h3>create poll</h3>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="ask que"/>
+                        <input class="form-control" type="text" placeholder="add commatn"/>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="option 1"/>
+                        <input class="form-control" type="text" placeholder="option 2"/><a class="add-option" href="#">add
+                        an option</a>
+                    </div>
+                    <div class="form-group">
+                        <div class="post-poll">
+                            <ul>
+                                <li>post poll in
+                                    <p class="pt-0">test name</p>
+                                </li>
+                                <li>poll expier in 7 days
+                                    <p class="pt-0">test name</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="allow-group">
+                            <input class="allow-check" type="checkbox"/>Allow users to vote anonymously
+                        </div>
+                    </div>
+                    <div class="creat-poll-btn"><a class="btn btn-primary button-effect btn-sm" href="#"
+                                                   data-bs-dismiss="modal" aria-label="Close">Create poll</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

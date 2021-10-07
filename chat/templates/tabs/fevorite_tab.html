@@ -1,0 +1,53 @@
+{% load static %}
+<div class="fevorite-tab dynemic-sidebar" id="favourite">
+    <div class="theme-title">
+        <div class="media">
+            <div>
+                <h2>Favourite</h2>
+                <h4>Last Recent</h4>
+            </div>
+            <div class="media-body text-end"><a class="icon-btn btn-outline-light btn-sm m-r-15 search" href="#"> <i
+                    data-feather="search"></i></a>
+                <form class="form-inline search-form">
+                    <div class="form-group">
+                        <input class="form-control-plaintext" type="search" placeholder="Search.."/>
+                        <div class="icon-close close-search"></div>
+                    </div>
+                </form>
+                <a class="icon-btn btn-outline-light btn-sm m-r-15" href="#" data-bs-toggle="modal"
+                   data-bs-target="#addcallmodal"><i data-feather="plus"> </i></a><a
+                        class="icon-btn btn-outline-light btn-sm close-panel" href="#"><i data-feather="x"></i></a>
+            </div>
+        </div>
+    </div>
+    <ul class="chat-main">
+        <li>
+            <div class="chat-box">
+                <div class="media">
+                    <div class="profile offline"><img class="bg-img" src="{% static 'assets/images/contact/1.jpg' %}"
+                                                      alt="Avatar"/></div>
+                    <div class="details">
+                        <h5>Josephin water</h5>
+                        <h6>Alabma , USA</h6>
+                    </div>
+                    <div class="media-body"><a class="icon-btn btn-outline-primary btn-sm pull-right favourite"
+                                               href="#"> <i data-feather="star"> </i></a></div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="chat-box">
+                <div class="media">
+                    <div class="profile online"><img class="bg-img" src="{% static 'assets/images/contact/2.jpg' %}"
+                                                     alt="Avatar"/></div>
+                    <div class="details">
+                        <h5>Jony Lynetin</h5>
+                        <h6>Los Angeles, California</h6>
+                    </div>
+                    <div class="media-body"><a class="icon-btn btn-outline-primary btn-sm pull-right favourite"
+                                               href="#"> <i data-feather="star"> </i></a></div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

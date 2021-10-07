@@ -1,29 +1,3 @@
-# from django.urls import reverse_lazy
-# from django.views import generic
-# from django.http import HttpResponse, HttpResponseRedirect
-# from accounts.forms import WebSignUpForm
-#
-#
-# class SignUp(generic.CreateView):
-#     form_class = WebSignUpForm
-#     success_url = reverse_lazy('login')
-#     template_name = 'signup.html'
-#
-#     def form_valid(self, form):
-#         self.object = form.save(commit=False)
-#         self.object.save()
-#         current_site = get_current_site(request)
-#         subject = 'Activate Your MySite Account'
-#         message = render_to_string('account_activation_email.html', {
-#             'user': self.object,
-#             'domain': current_site.domain,
-#             'uid': urlsafe_base64_encode(force_bytes(user.pk)),
-#             'token': account_activation_token.make_token(user),
-#         })
-#         user.email_user(subject, message)
-#         return HttpResponseRedirect(self.get_success_url())
-
-
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 from django.views import View
@@ -106,7 +80,8 @@ def activate(request, uidb64, token):
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
-        return redirect('signup_activation_done')
+        # return redirect('signup_activation_done')
+        return redirect('profile_completion')
     else:
         return redirect(reverse('invalid_activate'))
 
@@ -115,3 +90,7 @@ class ProfileCreateView(generic.CreateView):
     form_class = ProfileForm
     success_url = reverse_lazy('home')
     template_name = 'profile_completion.html'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(ProfileCreateView, self).form_valid(form)

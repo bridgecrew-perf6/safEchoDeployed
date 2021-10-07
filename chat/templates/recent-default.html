@@ -1,0 +1,767 @@
+{% load static %}
+<div class="recent-default dynemic-sidebar active">
+    <div class="recent">
+        <div class="theme-title">
+            <div class="media">
+                <div>
+                    <h2>Recent</h2>
+                    <h4>Chat from your friends &#128536;</h4>
+                </div>
+                <div class="media-body"><a class="icon-btn btn-outline-light button-effect pull-right mobile-back"
+                                           href="#"><i class="ti-angle-right"></i></a><a
+                        class="icon-btn btn-outline-light button-effect pull-right mainnav" href="#"><i
+                        class="ti-layout-grid2"></i></a></div>
+            </div>
+        </div>
+        <div class="recent-slider recent-chat owl-carousel owl-theme">
+            <div class="item">
+                <div class="recent-box">
+                    <div class="dot-btn dot-danger grow"></div>
+                    <div class="recent-profile"><img class="bg-img" src="{% static '/assets/images/avtar/1.jpg' %}"
+                                                     alt="Avatar"/>
+                        <h6> John deo</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="recent-box">
+                    <div class="dot-btn dot-success grow"></div>
+                    <div class="recent-profile online"><img class="bg-img"
+                                                            src="{% static '/assets/images/avtar/big/audiocall.jpg' %}"
+                                                            alt="Avatar"/>
+                        <h6> John </h6>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="recent-box">
+                    <div class="dot-btn dot-warning grow"></div>
+                    <div class="recent-profile"><img class="bg-img" src="{% static '/assets/images/avtar/2.jpg' %}"
+                                                     alt="Avatar"/>
+                        <h6> Jpny</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chat custom-scroll">
+        <ul class="chat-cont-setting">
+            <li><a href="#" data-bs-toggle="modal" data-bs-target="#msgchatModal"><span>new chat</span>
+                <div class="icon-btn btn-outline-primary button-effect btn-sm"><i data-feather="message-square"></i>
+                </div>
+            </a></li>
+            <li><a href="#" data-bs-toggle="modal" data-bs-target="#msgcallModal"><span>new call</span>
+                <div class="icon-btn btn-outline-success button-effect btn-sm"><i data-feather="phone"></i></div>
+            </a></li>
+            <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><span>new Contact</span>
+                <div class="icon-btn btn-outline-danger button-effect btn-sm"><i data-feather="users"></i></div>
+            </a></li>
+        </ul>
+        <div class="theme-title">
+            <div class="media">
+                <div>
+                    <h2>Chat</h2>
+                    <h4>Start New Conversation</h4>
+                </div>
+                <div class="media-body text-end"><a class="icon-btn btn-outline-light btn-sm search contact-search"
+                                                    href="#"> <i data-feather="search"></i></a>
+                    <form class="form-inline search-form">
+                        <div class="form-group">
+                            <input class="form-control-plaintext" type="search" placeholder="Search.."/>
+                            <div class="icon-close close-search"></div>
+                        </div>
+                    </form>
+                    <a class="icon-btn btn-primary btn-fix chat-cont-toggle outside" href="#"><i
+                            data-feather="plus"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="theme-tab tab-sm chat-tabs">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" data-to="chat-content"><a class="nav-link button-effect active" id="chat-tab"
+                                                               data-bs-toggle="tab" href="#chat" role="tab"
+                                                               aria-controls="chat" aria-selected="true"
+                                                               data-intro="Start chat"><i
+                        data-feather="message-square"> </i>Chat</a></li>
+                <li class="nav-item" data-to="call-content"><a class="nav-link button-effect" id="call-tab"
+                                                               data-bs-toggle="tab" href="#call" role="tab"
+                                                               aria-controls="call" aria-selected="false"><i
+                        data-feather="phone"> </i>Call</a></li>
+                <li class="nav-item" data-to="contact-content"><a class="nav-link button-effect" id="contact-tab"
+                                                                  data-bs-toggle="tab" href="#contact" role="tab"
+                                                                  aria-controls="contact" aria-selected="false"> <i
+                        data-feather="users"> </i>Contact</a></li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+                    <div class="theme-tab">
+                        <ul class="nav nav-tabs" id="myTab1" role="tablist">
+                            <li class="nav-item"><a class="nav-link button-effect active" id="direct-tab"
+                                                    data-bs-toggle="tab" href="#direct" role="tab"
+                                                    aria-controls="direct" aria-selected="false" data-to="chating">Direct</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link button-effect" id="group-tab" data-bs-toggle="tab"
+                                                    href="#group" role="tab" aria-controls="group" aria-selected="true"
+                                                    data-to="group_chat">Group</a></li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent1">
+                            <div class="tab-pane fade show active" id="direct" role="tabpanel"
+                                 aria-labelledby="direct-tab">
+                                <ul class="chat-main">
+                                    <li data-to="blank">
+                                        <div class="chat-box">
+                                            <div class="profile offline"><img class="bg-img"
+                                                                              src="{% static '/assets/images/contact/1.jpg' %}"
+                                                                              alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Josephin water</h5>
+                                                <h6>Hi, i am josephin. How are you.. ! There are many variations of
+                                                    passages.</h6>
+                                            </div>
+                                            <div class="date-status"><i class="ti-pin2"></i>
+                                                <h6>22/10/19</h6>
+                                                <h6 class="font-success status"> Seen</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="active" data-to="chating">
+                                        <div class="chat-box">
+                                            <div class="profile online"><img class="bg-img"
+                                                                             src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                             alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6>Typing................</h6>
+                                            </div>
+                                            <div class="date-status"><i class="ti-pin2"></i>
+                                                <h6>30/11/19</h6>
+                                                <div class="badge badge-primary sm">8</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-to="blank">
+                                        <div class="chat-box">
+                                            <div class="profile unreachable"><img class="bg-img"
+                                                                                  src="{% static 'assets/images/contact/3.jpg' %}"
+                                                                                  alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Sufiya Elija</h5>
+                                                <h6>I need job, please help me.</h6>
+                                            </div>
+                                            <div class="date-status"><i class="ti-pin2"></i>
+                                                <h6>15/06/19</h6>
+                                                <h6 class="font-dark status"> Sending</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-to="blank">
+                                        <div class="chat-box">
+                                            <div class="profile busy"><img class="bg-img"
+                                                                           src="{% static 'assets/images/contact/4.jpg' %}"
+                                                                           alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Mukrani Pabelo</h5>
+                                                <h6>Hi, i am josephin. How are you.. ! There are many variations of
+                                                    passages.</h6>
+                                            </div>
+                                            <div class="date-status"><i class="ti-pin2"></i>
+                                                <h6>04/06/19</h6>
+                                                <h6 class="font-danger status"> Failed</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-to="blank">
+                                        <div class="chat-box">
+                                            <div class="profile busy"><img class="bg-img"
+                                                                           src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                           alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jhon Deo</h5>
+                                                <h6>Hi, i am josephin. How are you.. ! There are many variations of
+                                                    passages.</h6>
+                                            </div>
+                                            <div class="date-status"><i class="ti-pin2"></i>
+                                                <h6>04/06/19</h6>
+                                                <h6 class="font-danger status"> Failed</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-to="blank">
+                                        <div class="chat-box">
+                                            <div class="profile busy"><img class="bg-img"
+                                                                           src="{% static 'assets/images/contact/1.jpg' %}"
+                                                                           alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Pabelo Mukrani</h5>
+                                                <h6>Hi, i am josephin. How are you.. ! There are many variations of
+                                                    passages.</h6>
+                                            </div>
+                                            <div class="date-status"><i class="ti-pin2"></i>
+                                                <h6>04/06/19</h6>
+                                                <h6 class="font-danger status"> Failed</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="group" role="tabpanel" aria-labelledby="group-tab">
+                                <div class="search2">
+                                    <div>
+                                        <div class="input-group">
+                                            <div class="input-group-append"><span class="input-group-text"><i
+                                                    class="fa fa-search"></i></span></div>
+                                            <input class="form-control" type="text" placeholder="Start Chat"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="group-main">
+                                    <li class="active" data-to="group_chat">
+                                        <div class="group-box">
+                                            <div class="profile"><img class="bg-img"
+                                                                      src="{% static 'assets/images/avtar/teq.jpg' %}"
+                                                                      alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Tech Ninjas</h5>
+                                                <h6>Lorem Ipsum is simply dummy text the printing and typesetting
+                                                    industry.</h6>
+                                            </div>
+                                            <div class="date-status">
+                                                <ul class="grop-icon">
+                                                    <li><a class="group-tp" href="#" data-tippy-content="Josephin"> <img
+                                                            src="{% static 'assets/images/contact/1.jpg' %}"
+                                                            alt="group-icon-img"/></a></li>
+                                                    <li><a class="group-tp" href="#" data-tippy-content="Jony "> <img
+                                                            src="{% static 'assets/images/contact/2.jpg' %}"
+                                                            alt="group-icon-img"/></a></li>
+                                                    <li><a class="group-tp" href="#" data-tippy-content="Pabelo"> <img
+                                                            src="{% static 'assets/images/contact/3.jpg' %}"
+                                                            alt="group-icon-img"/></a></li>
+                                                    <li>+ 35</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-to="group_blank">
+                                        <div class="group-box">
+                                            <div class="profile"><img class="bg-img"
+                                                                      src="{% static 'assets/images/avtar/family.jpg' %}"
+                                                                      alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Family Ties</h5>
+                                                <h6>Lorem Ipsum is simply dummy text the printing and typesetting
+                                                    industry.</h6>
+                                            </div>
+                                            <div class="date-status">
+                                                <ul class="grop-icon">
+                                                    <li><a class="group-tp" href="#" data-tippy-content="Josephin"> <img
+                                                            src="{% static 'assets/images/contact/1.jpg' %}"
+                                                            alt="group-icon-img"/></a></li>
+                                                    <li><a class="group-tp" href="#" data-tippy-content="Jony "> <img
+                                                            src="{% static 'assets/images/contact/2.jpg' %}"
+                                                            alt="group-icon-img"/></a></li>
+                                                    <li><a class="group-tp" href="#" data-tippy-content="Pabelo"> <img
+                                                            src="{% static 'assets/images/contact/3.jpg' %}"
+                                                            alt="group-icon-img"/></a></li>
+                                                    <li>+ 12</li>
+                                                </ul>
+                                                <div class="badge badge-primary"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-to="group_blank">
+                                        <div class="group-box">
+                                            <div class="profile bg-danger"><span>HT</span></div>
+                                            <div class="details">
+                                                <h5>Hungry for Trouble</h5>
+                                                <h6>Lorem Ipsum is simply dummy text the printing and typesetting
+                                                    industry.</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-to="group_blank">
+                                        <div class="group-box">
+                                            <div class="profile"><img class="bg-img"
+                                                                      src="{% static 'assets/images/avtar/girls.jpg' %}"
+                                                                      alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Staunch Ladies</h5>
+                                                <h6>Lorem Ipsum is simply dummy text the printing and typesetting
+                                                    industry.</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-to="group_blank">
+                                        <div class="group-box">
+                                            <div class="profile bg-success"><span>CE</span></div>
+                                            <div class="details">
+                                                <h5>Crazy Engineers</h5>
+                                                <h6>Lorem Ipsum is simply dummy text the printing and typesetting
+                                                    industry.</h6>
+                                            </div>
+                                            <div class="date-status"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="call" role="tabpanel" aria-labelledby="call-tab">
+                    <div class="theme-tab tab-icon">
+                        <ul class="nav nav-tabs" id="contactTab" role="tablist">
+                            <li class="nav-item"><a class="nav-link active" id="con1-tab" data-bs-toggle="tab"
+                                                    href="#con1" role="tab" aria-controls="con1" aria-selected="true">All</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" id="con3-tab" data-bs-toggle="tab" href="#con3"
+                                                    role="tab" aria-controls="con3" aria-selected="false"> <i
+                                    data-feather="phone-incoming"></i></a></li>
+                            <li class="nav-item"><a class="nav-link" id="con4-tab" data-bs-toggle="tab" href="#con4"
+                                                    role="tab" aria-controls="con4" aria-selected="false"> <i
+                                    data-feather="phone-outgoing"></i></a></li>
+                            <li class="nav-item"><a class="nav-link" id="con2-tab" data-bs-toggle="tab" href="#con2"
+                                                    role="tab" aria-controls="con2" aria-selected="false"> <i
+                                    data-feather="phone-missed"></i></a></li>
+                        </ul>
+                        <div class="tab-content" id="contactTabContent">
+                            <div class="tab-pane fade show active" id="con1" role="tabpanel" aria-labelledby="con1-tab">
+                                <ul class="call-log-main">
+                                    <li class="active">
+                                        <div class="call-box">
+                                            <div class="profile offline"><img class="bg-img"
+                                                                              src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                              alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i data-feather="arrow-down-left"></i>3:30 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-success button-effect btn-sm"><i
+                                                        data-feather="phone"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile online"><img class="bg-img"
+                                                                             src="{% static 'assets/images/contact/1.jpg' %}"
+                                                                             alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i data-feather="arrow-down-right"></i>3:10 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-success button-effect btn-sm"><i
+                                                        data-feather="video"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile offline"><img class="bg-img"
+                                                                              src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                              alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i class="missed" data-feather="corner-left-down"></i>3:00 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-danger button-effect btn-sm"><i
+                                                        data-feather="phone"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile online"><img class="bg-img"
+                                                                             src="{% static 'assets/images/contact/1.jpg' %}"
+                                                                             alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i data-feather="arrow-down-right"></i>3:00 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-success button-effect btn-sm"><i
+                                                        data-feather="video"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile offline"><img class="bg-img"
+                                                                              src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                              alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i data-feather="arrow-down-right"></i>3:00 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-success button-effect btn-sm"><i
+                                                        data-feather="phone"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile online"><img class="bg-img"
+                                                                             src="{% static 'assets/images/contact/1.jpg' %}"
+                                                                             alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i data-feather="arrow-down-right"></i>3:00 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-success button-effect btn-sm"><i
+                                                        data-feather="video"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="con2" role="tabpanel" aria-labelledby="con2-tab">
+                                <ul class="call-log-main">
+                                    <li class="active">
+                                        <div class="call-box">
+                                            <div class="profile offline"><img class="bg-img"
+                                                                              src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                              alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i class="missed" data-feather="corner-left-down"></i>3:30 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-danger button-effect btn-sm"><i
+                                                        data-feather="phone"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile online"><img class="bg-img"
+                                                                             src="{% static 'assets/images/contact/1.jpg' %}"
+                                                                             alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i class="missed" data-feather="corner-left-down"></i>3:10 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-danger button-effect btn-sm"><i
+                                                        data-feather="video"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile offline"><img class="bg-img"
+                                                                              src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                              alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i class="missed" data-feather="corner-left-down"></i>3:00 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-danger button-effect btn-sm"><i
+                                                        data-feather="phone"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile online"><img class="bg-img"
+                                                                             src="{% static 'assets/images/contact/1.jpg' %}"
+                                                                             alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i class="missed" data-feather="corner-left-down"></i>3:00 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-danger button-effect btn-sm"><i
+                                                        data-feather="video"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile offline"><img class="bg-img"
+                                                                              src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                              alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i class="missed" data-feather="corner-left-down"></i>3:00 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-danger button-effect btn-sm"><i
+                                                        data-feather="phone"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile online"><img class="bg-img"
+                                                                             src="{% static 'assets/images/contact/1.jpg' %}"
+                                                                             alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i class="missed" data-feather="corner-left-down"></i>3:00 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-danger button-effect btn-sm"><i
+                                                        data-feather="video"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="con3" role="tabpanel" aria-labelledby="con3-tab">
+                                <ul class="call-log-main">
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile online"><img class="bg-img"
+                                                                             src="{% static 'assets/images/contact/1.jpg' %}"
+                                                                             alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i data-feather="arrow-down-right"></i>3:10 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-success button-effect btn-sm"><i
+                                                        data-feather="video"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile offline"><img class="bg-img"
+                                                                              src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                              alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i data-feather="arrow-down-right"></i>3:00 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-success button-effect btn-sm"><i
+                                                        data-feather="phone"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile online"><img class="bg-img"
+                                                                             src="{% static 'assets/images/contact/1.jpg' %}"
+                                                                             alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i data-feather="arrow-down-right"></i>3:00 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-success button-effect btn-sm"><i
+                                                        data-feather="video"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile offline"><img class="bg-img"
+                                                                              src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                              alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i data-feather="arrow-down-right"></i>3:00 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-success button-effect btn-sm"><i
+                                                        data-feather="phone"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile online"><img class="bg-img"
+                                                                             src="{% static 'assets/images/contact/1.jpg' %}"
+                                                                             alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i data-feather="arrow-down-right"></i>3:00 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-success button-effect btn-sm"><i
+                                                        data-feather="video"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="con4" role="tabpanel" aria-labelledby="con4-tab">
+                                <ul class="call-log-main">
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile online"><img class="bg-img"
+                                                                             src="{% static 'assets/images/contact/1.jpg' %}"
+                                                                             alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i data-feather="arrow-up-right"></i>3:10 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-success button-effect btn-sm"><i
+                                                        data-feather="video"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile offline"><img class="bg-img"
+                                                                              src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                              alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i data-feather="arrow-up-right"></i>3:00 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-success button-effect btn-sm"><i
+                                                        data-feather="phone"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile online"><img class="bg-img"
+                                                                             src="{% static 'assets/images/contact/1.jpg' %}"
+                                                                             alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i data-feather="arrow-up-right"></i>3:00 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-success button-effect btn-sm"><i
+                                                        data-feather="video"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile offline"><img class="bg-img"
+                                                                              src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                              alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i data-feather="arrow-up-right"></i>3:00 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-success button-effect btn-sm"><i
+                                                        data-feather="phone"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="call-box">
+                                            <div class="profile online"><img class="bg-img"
+                                                                             src="{% static 'assets/images/contact/1.jpg' %}"
+                                                                             alt="Avatar"/></div>
+                                            <div class="details">
+                                                <h5>Jony Lynetin</h5>
+                                                <h6><i data-feather="arrow-up-right"></i>3:00 pm</h6>
+                                            </div>
+                                            <div class="call-status">
+                                                <div class="icon-btn btn-outline-success button-effect btn-sm"><i
+                                                        data-feather="video"></i></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <ul class="contact-log-main">
+                        <li>
+                            <div class="contact-box">
+                                <div class="profile offline"><img class="bg-img"
+                                                                  src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                  alt="Avatar"/></div>
+                                <div class="details">
+                                    <h5>Jony Lynetin</h5>
+                                    <h6>+21 3523 25544 </h6>
+                                </div>
+                                <div class="contact-action">
+                                    <div class="icon-btn btn-outline-primary btn-sm button-effect"><i
+                                            data-feather="phone"></i></div>
+                                    <div class="icon-btn btn-outline-success btn-sm button-effect"><i
+                                            data-feather="video"></i></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="active">
+                            <div class="contact-box">
+                                <div class="profile online"><img class="bg-img"
+                                                                 src="{% static 'assets/images/contact/1.jpg' %}"
+                                                                 alt="Avatar"/></div>
+                                <div class="details">
+                                    <h5>Jony Lynetin</h5>
+                                    <h6>+54 541447 255 </h6>
+                                </div>
+                                <div class="contact-action">
+                                    <div class="icon-btn btn-outline-primary btn-sm button-effect"><i
+                                            data-feather="phone"></i></div>
+                                    <div class="icon-btn btn-outline-success btn-sm button-effect"><i
+                                            data-feather="video"></i></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-box">
+                                <div class="profile busy"><img class="bg-img"
+                                                               src="{% static 'assets/images/contact/3.jpg' %}"
+                                                               alt="Avatar"/></div>
+                                <div class="details">
+                                    <h5>Jony Lynetin</h5>
+                                    <h6>+58 2564 02554</h6>
+                                </div>
+                                <div class="contact-action">
+                                    <div class="icon-btn btn-outline-primary btn-sm button-effect"><i
+                                            data-feather="phone"></i></div>
+                                    <div class="icon-btn btn-outline-success btn-sm button-effect"><i
+                                            data-feather="video"></i></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-box">
+                                <div class="profile unreachable"><img class="bg-img"
+                                                                      src="{% static 'assets/images/contact/4.jpg' %}"
+                                                                      alt="Avatar"/></div>
+                                <div class="details">
+                                    <h5>Jony Lynetin</h5>
+                                    <h6>+44 55124 2524</h6>
+                                </div>
+                                <div class="contact-action">
+                                    <div class="icon-btn btn-outline-primary btn-sm button-effect"><i
+                                            data-feather="phone"></i></div>
+                                    <div class="icon-btn btn-outline-success btn-sm button-effect"><i
+                                            data-feather="video"></i></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-box">
+                                <div class="profile online"><img class="bg-img"
+                                                                 src="{% static 'assets/images/contact/4.jpg' %}"
+                                                                 alt="Avatar"/></div>
+                                <div class="details">
+                                    <h5>Jony Lynetin</h5>
+                                    <h6>+54 541447 255 </h6>
+                                </div>
+                                <div class="contact-action">
+                                    <div class="icon-btn btn-outline-primary btn-sm button-effect"><i
+                                            data-feather="phone"></i></div>
+                                    <div class="icon-btn btn-outline-success btn-sm button-effect"><i
+                                            data-feather="video"></i></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

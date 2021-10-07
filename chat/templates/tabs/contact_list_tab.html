@@ -1,0 +1,51 @@
+{% load static %}
+<div class="contact-list-tab dynemic-sidebar custom-scroll" id="contact-list">
+    <div class="theme-title">
+        <div class="media">
+            <div>
+                <h2>Contact</h2>
+                <h4>Start talking now</h4>
+            </div>
+            <div class="media-body text-end"><a class="icon-btn btn-outline-light btn-sm m-r-15 search" href="#"> <i
+                    data-feather="search"></i></a>
+                <form class="form-inline search-form">
+                    <div class="form-group">
+                        <input class="form-control-plaintext" type="search" placeholder="Search.."/>
+                        <div class="icon-close close-search"></div>
+                    </div>
+                </form>
+                <a class="icon-btn btn-outline-light btn-sm close-panel" href="#"><i data-feather="x"></i></a>
+            </div>
+        </div>
+    </div>
+    <ul class="chat-main">
+        <li>
+            <div class="chat-box">
+                <div class="profile offline"><img class="bg-img" src="{% static 'assets/images/contact/1.jpg' %}"
+                                                  alt="Avatar"/></div>
+                <div class="details">
+                    <h5>Josephin water</h5>
+                    <h6>Hi, i am josephin. How are you.. ! There are many variations of passages.</h6>
+                </div>
+                <div class="date-status">
+                    <h6>22/10/19</h6>
+                    <h6 class="font-success status"> Seen</h6>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="chat-box">
+                <div class="profile online"><img class="bg-img" src="{% static 'assets/images/contact/2.jpg' %}"
+                                                 alt="Avatar"/></div>
+                <div class="details">
+                    <h5>Jony Lynetin</h5>
+                    <h6>Hello</h6>
+                </div>
+                <div class="date-status">
+                    <h6>30/11/19</h6>
+                    <div class="badge badge-primary sm">8</div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
