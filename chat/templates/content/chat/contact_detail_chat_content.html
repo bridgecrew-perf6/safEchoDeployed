@@ -1,0 +1,72 @@
+{% load static %}
+<div class="contact-details">
+            <div class="row">
+                <div class="col-7">
+                    <div class="media left">
+                        <div class="media-left me-3">
+                            <div class="profile online menu-trigger"><img class="bg-img"
+                                                                          src="{% static 'assets/images/contact/2.jpg' %}"
+                                                                          alt="Avatar"/></div>
+                        </div>
+                        <div class="media-body">
+                            <h5>Josephin water</h5>
+                            <div class="badge badge-success">Active</div>
+                        </div>
+                        <div class="media-right">
+                            <ul>
+                                <li><a class="icon-btn btn-light button-effect mute" href="#"><i
+                                        class="fa fa-volume-up"></i></a></li>
+                                <li><a class="icon-btn btn-light search search-right" href="#"><i
+                                        data-feather="search"></i></a>
+                                    <form class="form-inline search-form">
+                                        <div class="form-group">
+                                            <input class="form-control-plaintext" type="search"
+                                                   placeholder="Search.."/>
+                                            <div class="icon-close close-search"></div>
+                                        </div>
+                                    </form>
+                                </li>
+                                <li><a class="icon-btn btn-light button-effect mobile-sidebar" href="#"><i
+                                        data-feather="chevron-left"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <ul class="calls text-end">
+                        <li><a class="icon-btn btn-light button-effect" href="#"
+                               data-tippy-content="Quick Audio Call" data-bs-toggle="modal"
+                               data-bs-target="#audiocall"><i data-feather="phone"></i></a></li>
+                        <li><a class="icon-btn btn-light button-effect" href="#"
+                               data-tippy-content="Quick Video Call" data-bs-toggle="modal"
+                               data-bs-target="#videocall"><i data-feather="video"></i></a></li>
+                        <li><a class="icon-btn btn-light button-effect apps-toggle" href="#"
+                               data-tippy-content="All Apps"><i class="ti-layout-grid2"></i></a></li>
+                        <li class="chat-friend-toggle"><a
+                                class="icon-btn btn-light bg-transparent button-effect outside" href="#"
+                                data-tippy-content="Quick action"><i data-feather="more-vertical"></i></a>
+                            <div class="chat-frind-content">
+                                <ul>
+                                    <li><a class="icon-btn btn-outline-primary button-effect btn-sm"
+                                           href="#"><i data-feather="user"></i></a>
+                                        <h5>Profile</h5>
+                                    </li>
+                                    <li><a class="icon-btn btn-outline-success button-effect btn-sm"
+                                           href="#"><i data-feather="plus-circle"></i></a>
+                                        <h5>Archive</h5>
+                                    </li>
+                                    <li><a class="icon-btn btn-outline-danger button-effect btn-sm"
+                                           href="#"><i data-feather="trash-2"></i></a>
+                                        <h5>Delete</h5>
+                                    </li>
+                                    <li><a class="icon-btn btn-outline-light button-effect btn-sm" href="#"><i
+                                            data-feather="slash"></i></a>
+                                        <h5>Block</h5>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>

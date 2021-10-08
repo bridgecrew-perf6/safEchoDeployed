@@ -16,18 +16,20 @@
         {% include 'left_sidebar.html' %}
 
         <aside class="chitchat-left-sidebar left-disp">
-            {% include 'recent-default.html' %}
-            {% include 'tabs/fevorite_tab.html' %}
-            {% include 'tabs/document-tab.html' %}
-            {% include 'tabs/contact_list_tab.html' %}
-            {% include 'tabs/notification_tab.html' %}
+{#            {% include 'recent-default.html' %}#}
+            {% include 'tabs/profile_tab.html' %}
+            {% include 'tabs/chat_tab.html' %}
+{#            {% include 'tabs/fevorite_tab.html' %}#}
+{#            {% include 'tabs/document-tab.html' %}#}
+{#            {% include 'tabs/contact_list_tab.html' %}#}
+{#            {% include 'tabs/notification_tab.html' %}#}
             {% include 'tabs/settings_tab.html' %}
-            {% include 'tabs/status_tab.html' %}
+{#            {% include 'tabs/status_tab.html' %}#}
         </aside>
         <div class="chitchat-main small-sidebar" id="content">
             {% include 'content/chat_content.html' %}
-            {% include 'content/call_content.html' %}
-            {% include 'content/contact_content.html' %}
+{#            {% include 'content/call_content.html' %}#}
+{#            {% include 'content/contact_content.html' %}#}
         </div>
         {% include 'right_sidebar.html' %}
         {% include 'app_sidebar.html' %}
