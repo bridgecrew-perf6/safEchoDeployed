@@ -2,7 +2,7 @@
 <div class="messages custom-scroll active" id="bot-chating">
 {#        {%  include 'content/chat/contact_detail_chat_content.html' %}#}
         <div class="contact-chat">
-            <ul class="chatappend">
+            <ul class="chatappend" id="chat-append">
                 {% for cc in chat.chat_content.all %}
                     {% if cc.user.user == request.user %}
                         <li class="replies">
@@ -107,6 +107,32 @@
             </ul>
         </div>
 </div>
+
+{% block extrajs %}
+    <script type="text/javascript " src="{% static 'assets/js/jquery-3.3.1.min.js' %} "></script>
+    <script>
+        var getBotChatContent = function () {
+            $.ajax({
+                url:'get_chat_content/1/',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    $("#chat-append").html(data.html_chat_content);
+                }
+            });
+            return false;
+        };
+
+        {#$(document).ready(function () {#}
+        {#    getBotChatContent();#}
+        {#});#}
+
+        {#// Create team#}
+        {#$("#create-team").click(loadCreateForm);#}
+        {#$("#modal-team").on("submit", ".js-team-create-form", saveForm);#}
+    </script>
+{% endblock %}
+
 {#                <li class="replies">#}
 {#                    <div class="media">#}
 {#                        <div class="profile me-4"><img class="bg-img"#}

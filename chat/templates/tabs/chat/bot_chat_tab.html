@@ -1,4 +1,5 @@
 {% load static %}
+
 <div class="tab-pane fade show active" id="bot" role="tabpanel" aria-labelledby="bot-tab">
     <div class="search2">
         <div>
@@ -9,7 +10,7 @@
             </div>
         </div>
     </div>
-    <ul class="group-main">
+    <ul class="group-main" id="bot_chat_list">
         <li class="active" data-to="group_chat">
             <div class="group-box">
                 <div class="profile"><img class="bg-img"
@@ -120,3 +121,28 @@
         </li>
     </ul>
 </div>
+
+{% block extrajs %}
+    <script type="text/javascript " src="{% static 'assets/js/jquery-3.3.1.min.js' %} "></script>
+    <script>
+        var getBotChatList = function () {
+            $.ajax({
+                url: '{% url 'get_chat_list' %}',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    $("#bot_chat_list").html(data.html_chat_list);
+                }
+            });
+            return false;
+        };
+
+        $(document).ready(function () {
+            getBotChatList();
+        });
+
+        {#// Create team#}
+        {#$("#create-team").click(loadCreateForm);#}
+        {#$("#modal-team").on("submit", ".js-team-create-form", saveForm);#}
+    </script>
+{% endblock %}
