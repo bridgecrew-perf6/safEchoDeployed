@@ -80,8 +80,8 @@ def activate(request, uidb64, token):
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
-        # return redirect('signup_activation_done')
-        return redirect('profile_completion')
+        return redirect('signup_activation_done')
+        # return redirect('profile_completion')
     else:
         return redirect(reverse('invalid_activate'))
 
