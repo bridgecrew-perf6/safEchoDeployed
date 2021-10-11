@@ -9,6 +9,7 @@ from django_countries.fields import CountryField
 
 class User(AbstractUser):
     email = models.EmailField(_('email address'), unique=True)
+    username = None
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 

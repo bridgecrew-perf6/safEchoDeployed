@@ -16,12 +16,12 @@ class SignupForm(UserCreationForm):
             {'class': 'form-control', 'placeholder': 'password'})
         self.fields['password2'].widget.attrs.update(
             {'class': 'form-control', 'placeholder': 'confirm password'})
-        self.fields['username'].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'username'})
+        # self.fields['username'].widget.attrs.update(
+        #     {'class': 'form-control', 'placeholder': 'username'})
 
     class Meta:
         model = User
-        fields = ('email', 'password1', 'password2', 'username')
+        fields = ('email', 'password1', 'password2',)
 
 
 class ProfileForm(forms.ModelForm):
