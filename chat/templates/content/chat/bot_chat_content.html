@@ -111,9 +111,9 @@
 {% block extrajs %}
     <script type="text/javascript " src="{% static 'assets/js/jquery-3.3.1.min.js' %} "></script>
     <script>
-        var getBotChatContent = function () {
+        var getBotChatContent = function (url) {
             $.ajax({
-                url:'get_chat_content/1/',
+                url:url,
                 type: 'GET',
                 dataType: 'json',
                 success: function (data) {
@@ -123,9 +123,9 @@
             return false;
         };
 
-        {#$(document).ready(function () {#}
-        {#    getBotChatContent();#}
-        {#});#}
+        $(document).ready(function () {
+            getBotChatContent();
+        });
 
         {#// Create team#}
         {#$("#create-team").click(loadCreateForm);#}

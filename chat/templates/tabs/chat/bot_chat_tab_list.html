@@ -1,7 +1,7 @@
 {% load static %}
 
 {% for chat in chats %}
-    <li class="active" data-to="group_chat" onclick="getBotChatContent()">
+    <li class="active" data-to="group_chat" onclick="getBotChatContent('{% url 'get_chat_content' pk=chat.pk %}')">
         <div class="group-box">
             <div class="profile"><img class="bg-img"
                                       src="{% static 'assets/images/avtar/teq.jpg' %}"
