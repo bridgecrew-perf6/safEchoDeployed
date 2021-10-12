@@ -1,0 +1,30 @@
+{% load static %}
+
+{% for chat in chats %}
+    <li class="active" data-to="group_chat" onclick="getBotChatContent('{% url 'get_chat_content' pk=chat.pk %}')">
+        <div class="group-box">
+            <div class="profile"><img class="bg-img"
+                                      src="{% static 'assets/images/avtar/teq.jpg' %}"
+                                      alt="Avatar"/></div>
+            <div class="details">
+                <h5>{{ chat.chat_name }}</h5>
+                <h6>Lorem Ipsum is simply dummy text the printing and typesetting
+                    industry.</h6>
+            </div>
+            <div class="date-status">
+                <ul class="grop-icon">
+                    {#                        <li><a class="group-tp" href="#" data-tippy-content="Josephin"> <img#}
+                    {#                                src="{% static 'assets/images/contact/1.jpg' %}"#}
+                    {#                                alt="group-icon-img"/></a></li>#}
+                    {#                        <li><a class="group-tp" href="#" data-tippy-content="Jony "> <img#}
+                    {#                                src="{% static 'assets/images/contact/2.jpg' %}"#}
+                    {#                                alt="group-icon-img"/></a></li>#}
+                    {#                        <li><a class="group-tp" href="#" data-tippy-content="Pabelo"> <img#}
+                    {#                                src="{% static 'assets/images/contact/3.jpg' %}"#}
+                    {#                                alt="group-icon-img"/></a></li>#}
+                    <li>+ {{ chat.chat_content.count }}</li>
+                </ul>
+            </div>
+        </div>
+    </li>
+{% endfor %}

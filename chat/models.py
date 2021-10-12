@@ -11,3 +11,4 @@ class ChatContent(models.Model):
 class Chat(models.Model):
     chat_name = models.CharField(blank=True, null=True, max_length=256, unique=True)
     chat_content = models.ManyToManyField(ChatContent)
+    chat_image = models.ImageField(upload_to='chat_image/', null=True, blank=True)
