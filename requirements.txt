@@ -13,3 +13,4 @@ six
 redis
 celery
 psycopg2-binary
+openai

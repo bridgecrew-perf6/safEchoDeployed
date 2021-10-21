@@ -671,7 +671,7 @@
         ==========================*/
 
         $(".messages").animate({ scrollTop: $(document).height() }, "fast");
-        $('.submit').on('click', function() {
+        $('.submitt').on('click', function() {
             typingMessage();
             newMessage();
         });
@@ -707,7 +707,7 @@
             }
         });
 
-        function newMessage() {
+        function newMessage1() {
             var message = $('.message-input input').val();
             if($.trim(message) == '') {
                 return false;
@@ -718,7 +718,7 @@
             $(".messages").animate({ scrollTop: $(document).height() }, "fast");
         };
 
-        function typingMessage() {
+        function typingMessage1() {
           $('<li class="sent last typing-m"> <div class="media"> <div class="profile mr-4 bg-size" style="background-image: url(&quot;../assets/images/contact/2.jpg&quot;); background-size: cover; background-position: center center; display: block;"><img class="bg-img" src="../assets/images/contact/2.jpg" alt="Avatar" style="display: none;"></div><div class="media-body"> <div class="contact-name"> <h5>Josephin water</h5> <h6>01:42 AM</h6> <ul class="msg-box"> <li> <h5> <div class="type"> <div class="typing-loader"></div></div></h5> </li></ul> </div></div></div></li>').appendTo($('.messages .chatappend'));
           $(".messages").animate({ scrollTop: $(document).height() }, "fast");   
           setTimeout(function() {

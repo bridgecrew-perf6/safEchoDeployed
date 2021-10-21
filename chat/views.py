@@ -5,8 +5,9 @@ from accounts.auth_middleware import LoginProfileRequiredMixin
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.http import JsonResponse
-
-from chat.models import Chat
+from chat.models import Conversation, ConversationContent
+from .bot import get_bot_response
+from .bot import BotManagement
 
 
 class ChatView(LoginProfileRequiredMixin, TemplateView):
@@ -15,7 +16,7 @@ class ChatView(LoginProfileRequiredMixin, TemplateView):
 
 class GetChatListView(LoginProfileRequiredMixin, TemplateView):
     template_name = 'tabs/chat/bot_chat_tab_list.html'
-    model = Chat
+    model = Conversation
 
     def get(self, request, *args, **kwargs):
         chats = self.model.objects.all()
@@ -27,11 +28,31 @@ class GetChatListView(LoginProfileRequiredMixin, TemplateView):
 
 class GetChatContentView(LoginProfileRequiredMixin, TemplateView):
     template_name = 'content/chat/bot_chat_content_async.html'
-    model = Chat
+    model = ConversationContent
 
     def get(self, request, *args, **kwargs):
-        chat = get_object_or_404(self.model, pk=kwargs['pk'])
-        context = {'chat': chat}
+        chats = ConversationContent.objects.filter(conversation__id=kwargs['pk'])
+        context = {'chats': chats}
         data = dict()
         data['html_chat_content'] = render_to_string(self.template_name, context, request=request)
+        return JsonResponse(data)
+
+
+class SendMessageView(LoginProfileRequiredMixin, TemplateView):
+    template_name = 'content/chat/bot_send_messsage_response.html'
+    model = ConversationContent
+
+    def post(self, request, *args, **kwargs):
+        query = request.POST.get('message')
+        response =BotManagement().search_response(query)
+        text_response = response.get('choices')[0].get('text')
+        conversation = get_object_or_404(Conversation, pk=kwargs['coversation_id'])
+        chat = ConversationContent(conversation=conversation, query=query,
+                                   sender=request.user.profile,
+                                   response=text_response,
+                                   response_json=response)
+        chat.save()
+        context = {'chat': chat}
+        data = dict()
+        data['html_chat_response'] = render_to_string(self.template_name, context, request=request)
         return JsonResponse(data)

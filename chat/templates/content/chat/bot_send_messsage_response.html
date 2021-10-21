@@ -1,0 +1,20 @@
+{% load static %}
+
+<li class="sent">
+    <div class="media">
+        <div class="profile mr-4 bg-size"
+             style="background-image: url(&quot;../assets/images/contact/2.jpg&quot;); background-size: cover; background-position: center center; display: block;">
+        </div>
+        <div class="media-body">
+            <div class="contact-name">
+                <h5>{{ chat.conversation.bot.name }}</h5> <h6>{{ chat.updated_at }}</h6>
+                <ul class="msg-box">
+                    <li>
+                        <h5> {{ chat.response }}</h5>
+                        <div class="badge badge-success sm ml-2">R</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</li>
