@@ -61,7 +61,8 @@ class GPTPrompt(BaseModel):
 
 
 class Conversation(BaseModel):
-    name = models.CharField(blank=True, null=True, max_length=256, unique=True)
+    user = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    name = models.CharField(max_length=256, unique=True)
     bot = models.ForeignKey(Bot, on_delete=models.CASCADE)
 
     def __str__(self):

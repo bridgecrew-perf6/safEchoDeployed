@@ -1,0 +1,77 @@
+{% load static %}
+<div class="modal fade add-popup add-contact-modal" id="newChatModal" tabindex="-1" role="dialog"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    Create New Chat</h2>
+                <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="new_chat_form">
+                <form class="default-form">
+                    <div class="form-group">
+                        <h5>Email or Username</h5>
+                        <input class="form-control" id="exampleInputEmail1" type="text" placeholder="Josephin water"/>
+                    </div>
+                    <div class="form-group mb-0">
+                        <h5>Contact number</h5>
+                        <input class="form-control" id="examplemsg" type="number" placeholder="12345678912"/>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger button-effect btn-sm" type="button" data-bs-dismiss="modal">Cancel
+                </button>
+                <button id="submit_button" class="btn btn-primary button-effect btn-sm" type="button">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extrajs %}
+    <script type="text/javascript " src="{% static 'assets/js/jquery-3.3.1.min.js' %} "></script>
+    <script>
+        var loadForm = function () {
+            $.ajax({
+                url: '{% url 'create_chat' %}',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    $("#new_chat_form").html(data.html_new_chat_form);
+                }
+            });
+            return false;
+        };
+
+        var saveForm = function () {
+                var form = $('#create_new_chat_form');
+                $.ajax({
+                    url: form.attr("action"),
+                    data: form.serialize(),
+                    type: form.attr("method"),
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.form_is_valid) {
+                            $("#newChatModal").modal("hide");
+                            getBotChatList()
+                        } else {
+                            $("#new_chat_form").html(data.html_new_chat_form);
+                        }
+                    }
+                });
+                return false;
+            };
+
+        $("#submit_button").on("click", saveForm);
+
+        $(document).ready(function () {
+            loadForm();
+        });
+
+    </script>
+{% endblock %}
+
+
+

@@ -23,26 +23,26 @@
                 <h3>Profile</h3>
                 {#          <h4>.</h4>#}
                 <form class="form2" method="POST">
-                  {% if form.errors %}
-                                        {% for field in form %}
-                                            {% for error in field.errors %}
-                                                <div class="alert alert-danger">
-                                                    <strong>{{ error|escape }}</strong>
-                                                </div>
-                                            {% endfor %}
-                                        {% endfor %}
-                                        {% for error in form.non_field_errors %}
-                                            <div class="alert alert-danger">
-                                                <strong>{{ error|escape }}</strong>
-                                            </div>
-                                        {% endfor %}
-                                    {% endif %}
-                 {% csrf_token %}
+                    {% if form.errors %}
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <div class="alert alert-danger">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                        {% for error in form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    {% csrf_token %}
                     <div class="form-group">
                         <label class="col-form-label" for="inputname">Role</label>
                         {{ form.role }}
                         {% if form.errors.role %}
-                                        <p> {{ form.errors.role }} </p>
+                            <p> {{ form.errors.role }} </p>
                         {% endif %}
                         {#              <input class="form-control" id="inputname" type="text" placeholder="Demo123">#}
                     </div>
@@ -50,7 +50,7 @@
                         <label class="col-form-label" for="inputEmail3">Date of Birth</label>
                         {{ form.dob }}
                         {% if form.errors.dob %}
-                                        <p> {{ form.errors.dob }} </p>
+                            <p> {{ form.errors.dob }} </p>
                         {% endif %}
                         {#              <input class="form-control" id="inputEmail3" type="email" placeholder="Demo@123gmail.com">#}
                     </div>
@@ -58,7 +58,7 @@
                         <label class="col-form-label" for="inputPassword3">Phone Number</label><span> </span>
                         {{ form.phone_number }}
                         {% if form.errors.phone_number %}
-                                        <p> {{ form.errors.phone_number }} </p>
+                            <p> {{ form.errors.phone_number }} </p>
                         {% endif %}
                         {#              <input class="form-control" id="inputPassword3" type="password" placeholder="Password">#}
                     </div>
@@ -66,7 +66,7 @@
                         <label class="col-form-label" for="inputPassword3">Country</label><span> </span>
                         {{ form.country }}
                         {% if form.errors.country %}
-                                        <p> {{ form.errors.country }} </p>
+                            <p> {{ form.errors.country }} </p>
                         {% endif %}
                         {#              <input class="form-control" id="inputPassword3" type="password" placeholder="Password">#}
                     </div>
@@ -74,23 +74,23 @@
                         <label class="col-form-label" for="inputPassword3">Address</label><span> </span>
                         {{ form.address }}
                         {% if form.errors.address %}
-                                        <p> {{ form.errors.address }} </p>
+                            <p> {{ form.errors.address }} </p>
                         {% endif %}
                         {#              <input class="form-control" id="inputPassword3" type="password" placeholder="Password">#}
                     </div>
                     <div class="form-group">
                         <label class="col-form-label" for="inputPassword3">Postal Code</label><span> </span>
                         {{ form.postal_code }}
-                         {% if form.errors.postal_code %}
-                                        <p> {{ form.errors.postal_code }} </p>
+                        {% if form.errors.postal_code %}
+                            <p> {{ form.errors.postal_code }} </p>
                         {% endif %}
                         {#              <input class="form-control" id="inputPassword3" type="password" placeholder="Password">#}
                     </div>
                     <div class="form-group">
                         <label class="col-form-label" for="inputPassword3">City</label><span> </span>
                         {{ form.city }}
-                         {% if form.errors.city %}
-                                        <p> {{ form.errors.city }} </p>
+                        {% if form.errors.city %}
+                            <p> {{ form.errors.city }} </p>
                         {% endif %}
                         {#              <input class="form-control" id="inputPassword3" type="password" placeholder="Password">#}
                     </div>
@@ -98,7 +98,7 @@
                         <label class="col-form-label" for="inputPassword3">Marketing</label><span> </span>
                         {{ form.marketing }}
                         {% if form.errors.marketing %}
-                                        <p> {{ form.errors.marketing }} </p>
+                            <p> {{ form.errors.marketing }} </p>
                         {% endif %}
                         {#              <input class="form-control" id="inputPassword3" type="password" placeholder="Password">#}
                     </div>
