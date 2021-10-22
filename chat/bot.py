@@ -30,6 +30,7 @@ class BotManagement(object):
     def search_response(self, query):
         openai.api_key = self.api_key
         prompt = 'Q: ' + query + '?\nA:'
+        # prompt = query
         response = openai.Completion.create(
             engine="davinci",
             prompt=prompt,

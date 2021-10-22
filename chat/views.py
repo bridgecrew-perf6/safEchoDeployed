@@ -8,6 +8,7 @@ from django.http import JsonResponse
 from chat.models import Conversation, ConversationContent
 from .bot import get_bot_response
 from .bot import BotManagement
+from .forms import ConversationForm
 
 
 class ChatView(LoginProfileRequiredMixin, TemplateView):
@@ -19,7 +20,7 @@ class GetChatListView(LoginProfileRequiredMixin, TemplateView):
     model = Conversation
 
     def get(self, request, *args, **kwargs):
-        chats = self.model.objects.all()
+        chats = self.model.objects.all().order_by('created_at')
         context = {'chats': chats}
         data = dict()
         data['html_chat_list'] = render_to_string(self.template_name, context, request=request)
@@ -38,13 +39,39 @@ class GetChatContentView(LoginProfileRequiredMixin, TemplateView):
         return JsonResponse(data)
 
 
+class CreateConversationView(LoginProfileRequiredMixin, TemplateView):
+    template_name = 'forms/create_new_conversation.html'
+    model = ConversationContent
+    form = ConversationForm
+
+    def get(self, request, *args, **kwargs):
+        form = self.form(initial={'user': request.user})
+        context = {'form': form}
+        data = dict()
+        data['html_new_chat_form'] = render_to_string(self.template_name, context, request=request)
+        return JsonResponse(data)
+
+    def post(self, request, *args, **kwargs):
+        data = dict()
+        form = self.form(request.POST)
+        form.instance.user = self.request.user.profile
+        if form.is_valid():
+            form.save()
+            data['form_is_valid'] = True
+        else:
+            data['form_is_valid'] = False
+            context = {'form': form}
+            data['html_new_chat_form'] = render_to_string(self.template_name, context, request=request)
+        return JsonResponse(data)
+
+
 class SendMessageView(LoginProfileRequiredMixin, TemplateView):
     template_name = 'content/chat/bot_send_messsage_response.html'
     model = ConversationContent
 
     def post(self, request, *args, **kwargs):
         query = request.POST.get('message')
-        response =BotManagement().search_response(query)
+        response = BotManagement().search_response(query)
         text_response = response.get('choices')[0].get('text')
         conversation = get_object_or_404(Conversation, pk=kwargs['coversation_id'])
         chat = ConversationContent(conversation=conversation, query=query,

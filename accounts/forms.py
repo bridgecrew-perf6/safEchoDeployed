@@ -24,25 +24,35 @@ class SignupForm(UserCreationForm):
         fields = ('email', 'password1', 'password2',)
 
 
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
+
 class ProfileForm(forms.ModelForm):
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['dob'].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'Date of birth'})
-        self.fields['phone_number'].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'Phone number'})
-        self.fields['country'].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'country'})
-        self.fields['address'].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'address'})
-        self.fields['postal_code'].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'postal_code'})
-        self.fields['city'].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'city'})
-        self.fields['marketing'].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'marketing'})
-
     class Meta:
         model = Profile
         fields = ('dob', 'phone_number', 'country', 'address', 'postal_code', 'city', 'role', 'marketing')
+        widgets = {
+            'dob': DateInput(),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['role'].widget.attrs.update(
+            {'class': 'form-control', 'placeholder': 'Select Role'})
+        self.fields['dob'].widget.attrs.update(
+            {'class': 'form-control datetimepicker-input', 'placeholder': 'Date of birth'})
+        self.fields['phone_number'].widget.attrs.update(
+            {'class': 'form-control', 'placeholder': 'Phone number'})
+        self.fields['country'].widget.attrs.update(
+            {'class': 'form-control', 'placeholder': 'Country'})
+        self.fields['address'].widget.attrs.update(
+            {'class': 'form-control', 'placeholder': 'Address'})
+        self.fields['postal_code'].widget.attrs.update(
+            {'class': 'form-control', 'placeholder': 'Postal code'})
+        self.fields['city'].widget.attrs.update(
+            {'class': 'form-control', 'placeholder': 'City'})
+        self.fields['marketing'].widget.attrs.update(
+            {'class': 'form-control', 'placeholder': 'Marketing'})
+
+

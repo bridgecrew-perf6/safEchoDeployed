@@ -394,7 +394,101 @@
     /*=====================
            13. Customizer
            ==========================*/
-           $('<div class="sidebar-pannle-main"><ul><li class="rtl-setting icon-btn btn-primary">RTL</li><li class="cog-click icon-btn btn-success" ><i class="fa fa-cog"></i></li></ul></div> <section class="setting-sidebar"><div class="theme-title"><div class="media"><div><h2>Customizer</h2><h4>Real Time Customize</h4></div><div class="media-body"><a class="icon-btn btn-outline-light button-effect pull-right cog-close" href="#"><i class="fa fa-close"></i></a></div></div></div><div class="color-picker"><h5>Choose color</h5><ul class="colors"><li class="color active" data-attr="style"></li><li class="color1" data-attr="style1"></li><li class="color2" data-attr="style2"></li><li class="color3" data-attr="style3"></li><li class="color4" data-attr="style4"></li><li class="color5" data-attr="style5"></li><li class="color6" data-attr="style6"></li></ul></div><div class="theme-layout"><h5>Layout</h5><ul><li class="active" data-attr=""><div class="sidebar"></div><div class="sidebar-content"></div></li><li data-attr="dark-sidebar"><div class="sidebar"></div><div class="sidebar-content"></div></li><li data-attr="dark"><div class="sidebar"></div><div class="sidebar-content"></div></li><li data-attr="colorfull"><div class="sidebar"></div><div class="sidebar-content"></div></li></ul></div><div class="chat-wallpaper"><h5>Chat wallpaper</h5><ul class="wallpaper"><li class="bg-color bg-default active"></li><li class="bg-size" style="background-image: url("../assets/images/wallpaper/2.jpg"); background-size: cover; background-position: center center; display: block;"><img class="bg-img" src="../assets/images/wallpaper/2.jpg" alt="Avatar" style="display: none;"></li><li class="bg-size" style="background-image: url("../assets/images/wallpaper/3.jpg"); background-size: cover; background-position: center center; display: block;"><img class="bg-img" src="../assets/images/wallpaper/3.jpg" alt="Avatar" style="display: none;"></li><li class="bg-size" style="background-image: url("../assets/images/wallpaper/4.jpg"); background-size: cover; background-position: center center; display: block;"><img class="bg-img" src="../assets/images/wallpaper/4.jpg" alt="Avatar" style="display: none;"></li><li class="bg-size" style="background-image: url("../assets/images/wallpaper/5.jpg"); background-size: cover; background-position: center center; display: block;"><img class="bg-img" src="../assets/images/wallpaper/5.jpg" alt="Avatar" style="display: none;"></li><li class="bg-size" style="background-image: url("../assets/images/wallpaper/1.jpg"); background-size: cover; background-position: center center; display: block;"><img class="bg-img" src="../assets/images/wallpaper/1.jpg" alt="Avatar" style="display: none;"></li> <br><li class="bg-color grediant-1"></li><li class="bg-color grediant-2"></li><li class="bg-color grediant-3"></li><li class="bg-color grediant-4"></li><li class="bg-color grediant-5"></li><li class="bg-color grediant-6"></li></ul></div><div class="sidebar-setting"><h5>Sidebar</h5><ul><li class="active three-column"><div class="sm-sidebar"></div><div class="sidebar"></div><div class="sidebar-content"></div></li><li class="two-column"><div class="sidebar"></div><div class="sidebar-content"></div></li></ul></div> </section>').appendTo($('body'));
+           $('<div class="sidebar-pannle-main"><ul>' +
+               '<li class="rtl-setting icon-btn btn-primary">RTL</li>' +
+               '<li class="cog-click icon-btn btn-success" ><i class="fa fa-cog"></i></li>' +
+               '</ul>' +
+               '</div> ' +
+               '<section class="setting-sidebar">' +
+               '<div class="theme-title">' +
+               '<div class="media">' +
+               '<div>' +
+               '<h2>Customizer</h2>' +
+               '<h4>Real Time Customize</h4>' +
+               '</div>' +
+               '<div class="media-body">' +
+               '<a class="icon-btn btn-outline-light button-effect pull-right cog-close" href="#">' +
+               '<i class="fa fa-close"></i>' +
+               '</a></div></div></div>' +
+               '<div class="color-picker">' +
+               '<h5>Choose color</h5>' +
+               '<ul class="colors">' +
+               '<li class="color active" data-attr="style"></li>' +
+               '<li class="color1" data-attr="style1"></li>' +
+               '<li class="color2" data-attr="style2"></li>' +
+               '<li class="color3" data-attr="style3"></li>' +
+               '<li class="color4" data-attr="style4"></li>' +
+               '<li class="color5" data-attr="style5"></li>' +
+               '<li class="color6" data-attr="style6"></li>' +
+               '</ul>' +
+               '</div>' +
+               '<div class="theme-layout">' +
+               '<h5>Layout</h5>' +
+               '<ul>' +
+               '<li class="active" data-attr="">' +
+               '<div class="sidebar">' +
+               '</div>' +
+               '<div class="sidebar-content">' +
+               '</div>' +
+               '</li>' +
+               '<li data-attr="dark-sidebar">' +
+               '<div class="sidebar">' +
+               '</div>' +
+               '<div class="sidebar-content">' +
+               '</div>' +
+               '</li>' +
+               '<li data-attr="dark"><div class="sidebar">' +
+               '</div>' +
+               '<div class="sidebar-content"></div>' +
+               '</li>' +
+               '<li data-attr="colorfull">' +
+               '<div class="sidebar">' +
+               '</div>' +
+               '<div class="sidebar-content">' +
+               '</div>' +
+               '</li>' +
+               '</ul>' +
+               '</div>' +
+               '<div class="chat-wallpaper">' +
+               '<h5>Chat wallpaper</h5>' +
+               '<ul class="wallpaper">' +
+               '<li class="bg-color bg-default active"></li>' +
+               '<li class="bg-size" style="background-image: url("../assets/images/wallpaper/2.jpg"); background-size: cover; background-position: center center; display: block;">' +
+               '<img class="bg-img" src="../assets/images/wallpaper/2.jpg" alt="Avatar" style="display: none;">' +
+               '</li>' +
+               '<li class="bg-size" style="background-image: url("../assets/images/wallpaper/3.jpg"); background-size: cover; background-position: center center; display: block;">' +
+               '<img class="bg-img" src="../assets/images/wallpaper/3.jpg" alt="Avatar" style="display: none;">' +
+               '</li>' +
+               '<li class="bg-size" style="background-image: url("../assets/images/wallpaper/4.jpg"); background-size: cover; background-position: center center; display: block;">' +
+               '<img class="bg-img" src="../assets/images/wallpaper/4.jpg" alt="Avatar" style="display: none;">' +
+               '</li>' +
+               '<li class="bg-size" style="background-image: url("../assets/images/wallpaper/5.jpg"); background-size: cover; background-position: center center; display: block;">' +
+               '<img class="bg-img" src="../assets/images/wallpaper/5.jpg" alt="Avatar" style="display: none;">' +
+               '</li>' +
+               '<li class="bg-size" style="background-image: url("../assets/images/wallpaper/1.jpg"); background-size: cover; background-position: center center; display: block;">' +
+               '<img class="bg-img" src="../assets/images/wallpaper/1.jpg" alt="Avatar" style="display: none;">' +
+               '</li>' +
+               ' <br>' +
+               '<li class="bg-color grediant-1"></li>' +
+               '<li class="bg-color grediant-2"></li>' +
+               '<li class="bg-color grediant-3"></li>' +
+               '<li class="bg-color grediant-4"></li>' +
+               '<li class="bg-color grediant-5"></li>' +
+               '<li class="bg-color grediant-6"></li>' +
+               '</ul>' +
+               '</div>' +
+               '<div class="sidebar-setting">' +
+               '<h5>Sidebar</h5>' +
+               '<ul>' +
+               '<li class="active three-column">' +
+               '<div class="sm-sidebar"></div>' +
+               '<div class="sidebar"></div>' +
+               '<div class="sidebar-content"></div>' +
+               '</li>' +
+               '<li class="two-column"><div class="sidebar"></div><div class="sidebar-content"></div></li>' +
+               '</ul>' +
+               '</div>' +
+               ' </section>').appendTo($('body'));
            $('.cog-click').on('click', function () {
             $('.setting-sidebar').css("right", "0px");
         });
@@ -422,7 +516,7 @@
            body_event.on("click", ".themes-content li", function () {
             $(this).addClass('active').siblings().removeClass('active');
             $color = $(this).attr("data-attr");
-            $("#color").attr("href", "../assets/css/" + $color + ".css");
+            $("#color").attr("href", "../static/assets/css/" + $color + ".css");
             return false;
         });
 
@@ -812,7 +906,7 @@
     $("body").on("click", ".colors li", function () {
         $(this).addClass('active').siblings().removeClass('active');
         var $color = $(this).attr("data-attr");
-        $("#color").attr("href", "../assets/css/" + $color + ".css");
+        $("#color").attr("href", "../static/assets/css/" + $color + ".css");
         return false;
     });
 

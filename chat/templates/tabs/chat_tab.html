@@ -1,5 +1,5 @@
 {% load static %}
-<div class="recent-default dynemic-sidebar active" id="chat-content">
+{#<div class="recent-default dynemic-sidebar active" id="chat-content">#}
 {#    <div class="recent">#}
 {#        <div class="theme-title">#}
 {#            <div class="media">#}
@@ -15,33 +15,33 @@
 {#        </div>#}
 {##}
 {#    </div>#}
-    <div class="chat custom-scroll">
-        <ul class="chat-cont-setting">
-            <li><a href="#" data-bs-toggle="modal" data-bs-target="#msgchatModal"><span>new chat</span>
-                <div class="icon-btn btn-outline-primary button-effect btn-sm"><i data-feather="message-square"></i>
-                </div>
-            </a></li>
-            <li><a href="#" data-bs-toggle="modal" data-bs-target="#msgcallModal"><span>new call</span>
-                <div class="icon-btn btn-outline-success button-effect btn-sm"><i data-feather="phone"></i></div>
-            </a></li>
-            <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><span>new Contact</span>
-                <div class="icon-btn btn-outline-danger button-effect btn-sm"><i data-feather="users"></i></div>
-            </a></li>
-        </ul>
-        <div class="theme-title">
-            <div class="media">
-                <div>
-                    <h2>Chat</h2>
-                    <h4>Start New Conversation</h4>
-                </div>
-                <div class="media-body text-end">
-                    <a class="icon-btn btn-outline-light button-effect pull-right mobile-back" href="#">
-                        <i class="ti-angle-right"></i>
-                    </a>
-                    <a class="icon-btn btn-outline-light button-effect pull-right mainnav" href="#">
-                        <i class="ti-layout-grid2"></i>
-                    </a>
-
+{#    <div class="chat custom-scroll">#}
+{#        <ul class="chat-cont-setting">#}
+{#            <li><a href="#" data-bs-toggle="modal" data-bs-target="#msgchatModal"><span>new chat</span>#}
+{#                <div class="icon-btn btn-outline-primary button-effect btn-sm"><i data-feather="message-square"></i>#}
+{#                </div>#}
+{#            </a></li>#}
+{#            <li><a href="#" data-bs-toggle="modal" data-bs-target="#msgcallModal"><span>new call</span>#}
+{#                <div class="icon-btn btn-outline-success button-effect btn-sm"><i data-feather="phone"></i></div>#}
+{#            </a></li>#}
+{#            <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><span>new Contact</span>#}
+{#                <div class="icon-btn btn-outline-danger button-effect btn-sm"><i data-feather="users"></i></div>#}
+{#            </a></li>#}
+{#        </ul>#}
+{#        <div class="theme-title">#}
+{#            <div class="media">#}
+{#                <div>#}
+{#                    <h2>Chat</h2>#}
+{#                    <h4>Start New Conversation</h4>#}
+{#                </div>#}
+{#                <div class="media-body text-end">#}
+{#                    <a class="icon-btn btn-outline-light button-effect pull-right mobile-back" href="#">#}
+{#                        <i class="ti-angle-right"></i>#}
+{#                    </a>#}
+{#                    <a class="icon-btn btn-outline-light button-effect pull-right mainnav" href="#">#}
+{#                        <i class="ti-layout-grid2"></i>#}
+{#                    </a>#}
+{##}
 {#                    <a class="icon-btn btn-outline-light btn-sm search contact-search"#}
 {#                                                    href="#"> <i data-feather="search"></i></a>#}
 {#                    <form class="form-inline search-form">#}
@@ -52,6 +52,84 @@
 {#                    </form>#}
 {#                    <a class="icon-btn btn-primary btn-fix chat-cont-toggle outside" href="#"><i#}
 {#                            data-feather="plus"></i></a>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="theme-tab tab-sm chat-tabs">#}
+{#            <ul class="nav nav-tabs" id="myTab" role="tablist">#}
+{#                <li class="nav-item" data-to="chat-content"><a class="nav-link button-effect active" id="chat-tab"#}
+{#                                                               data-bs-toggle="tab" href="#chat" role="tab"#}
+{#                                                               aria-controls="chat" aria-selected="true"#}
+{#                                                               data-intro="Start chat"><i#}
+{#                        data-feather="message-square"> </i>Chat</a></li>#}
+{#                <li class="nav-item" data-to="call-content"><a class="nav-link button-effect" id="call-tab"#}
+{#                                                               data-bs-toggle="tab" href="#call" role="tab"#}
+{#                                                               aria-controls="call" aria-selected="false"><i#}
+{#                        data-feather="phone"> </i>Call</a></li>#}
+{#                <li class="nav-item" data-to="contact-content"><a class="nav-link button-effect" id="contact-tab"#}
+{#                                                                  data-bs-toggle="tab" href="#contact" role="tab"#}
+{#                                                                  aria-controls="contact" aria-selected="false"> <i#}
+{#                        data-feather="users"> </i>Contact</a></li>#}
+{#            </ul>#}
+{#            <div class="tab-content" id="myTabContent">#}
+{#                {% include 'tabs/chat/chat-tab.html' %}#}
+{#                {% include 'tabs/chat/call-tab.html' %}#}
+{#                {% include 'tabs/chat/contact-tab.html' %}#}
+{##}
+{##}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+
+
+<div class="recent-default dynemic-sidebar active" id="chat-content">
+    <div class="recent">
+        <div class="theme-title">
+            <div class="media">
+                <div>
+                    <h2>Recent</h2>
+                    <h4>Chat from your friends &#128536;</h4>
+                </div>
+                <div class="media-body"><a class="icon-btn btn-outline-light button-effect pull-right mobile-back"
+                                           href="#"><i class="ti-angle-right"></i></a><a
+                        class="icon-btn btn-outline-light button-effect pull-right mainnav" href="#"><i
+                        class="ti-layout-grid2"></i></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="chat custom-scroll" style="height: 100vh; min-height:auto;margin-top: 93px">
+        <ul class="chat-cont-setting">
+            <li>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#newChatModal">
+                    <span>new chat</span>
+                    <div class="icon-btn btn-outline-primary button-effect btn-sm">
+                        <i data-feather="message-square">
+                        </i>
+                    </div>
+                </a>
+            </li>
+{#            <li>#}
+{#                <a href="#" data-bs-toggle="modal" data-bs-target="#msgchatModal">#}
+{#                    <span>new chat</span>#}
+{#                    <div class="icon-btn btn-outline-primary button-effect btn-sm">#}
+{#                        <i data-feather="message-square">#}
+{#                        </i>#}
+{#                    </div>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li><a href="#" data-bs-toggle="modal" data-bs-target="#msgcallModal"><span>new call</span>#}
+{#                <div class="icon-btn btn-outline-success button-effect btn-sm"><i data-feather="phone"></i></div>#}
+{#            </a></li>#}
+{#            <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><span>new Contact</span>#}
+{#                <div class="icon-btn btn-outline-danger button-effect btn-sm"><i data-feather="users"></i></div>#}
+{#            </a></li>#}
+        </ul>
+        <div class="theme-title">
+            <div class="media">
+                <div class="media-body text-end">
+                    <a class="icon-btn btn-primary btn-fix chat-cont-toggle outside" href="#"><i
+                            data-feather="plus"></i></a>
                 </div>
             </div>
         </div>
@@ -62,21 +140,13 @@
                                                                aria-controls="chat" aria-selected="true"
                                                                data-intro="Start chat"><i
                         data-feather="message-square"> </i>Chat</a></li>
-{#                <li class="nav-item" data-to="call-content"><a class="nav-link button-effect" id="call-tab"#}
-{#                                                               data-bs-toggle="tab" href="#call" role="tab"#}
-{#                                                               aria-controls="call" aria-selected="false"><i#}
-{#                        data-feather="phone"> </i>Call</a></li>#}
-{#                <li class="nav-item" data-to="contact-content"><a class="nav-link button-effect" id="contact-tab"#}
-{#                                                                  data-bs-toggle="tab" href="#contact" role="tab"#}
-{#                                                                  aria-controls="contact" aria-selected="false"> <i#}
-{#                        data-feather="users"> </i>Contact</a></li>#}
+                {#                <li class="nav-item" data-to="call-content"><a class="nav-link button-effect" id="call-tab" data-bs-toggle="tab" href="#call" role="tab" aria-controls="call" aria-selected="false"><i data-feather="phone"> </i>Call</a></li>#}
+                {#                <li class="nav-item" data-to="contact-content"><a class="nav-link button-effect" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"> <i data-feather="users"> </i>Contact</a></li>#}
             </ul>
             <div class="tab-content" id="myTabContent">
                 {% include 'tabs/chat/chat-tab.html' %}
-{#                {% include 'tabs/chat/call-tab.html' %}#}
-{#                {% include 'tabs/chat/contact-tab.html' %}#}
-
-
+                {% include 'tabs/chat/call-tab.html' %}
+                {% include 'tabs/chat/contact-tab.html' %}
             </div>
         </div>
     </div>

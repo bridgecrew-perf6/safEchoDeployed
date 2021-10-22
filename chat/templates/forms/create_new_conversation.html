@@ -1,0 +1,31 @@
+{% load static %}
+<form id="create_new_chat_form" method="post" action="{% url 'create_chat' %}" class="default-form">
+    {% csrf_token %}
+    {% if form.errors %}
+        {% for error in form.non_field_errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="form-group">
+        <h5>Chat Name</h5>
+        {#        <input class="form-control" id="exampleInputEmail1" type="text" placeholder="Josephin water"/>#}
+        {{ form.name }}
+        {% if  form.name.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ form.name.errors|escape }}</strong>
+            </div>
+        {% endif %}
+    </div>
+    <div class="form-group mb-0">
+        <h5>Select Bot</h5>
+        {{ form.bot }}
+        {% if  form.bot.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ form.bot.errors|escape }}</strong>
+            </div>
+        {% endif %}
+        {#        <input class="form-control" id="examplemsg" type="number" placeholder="12345678912"/>#}
+    </div>
+</form>
