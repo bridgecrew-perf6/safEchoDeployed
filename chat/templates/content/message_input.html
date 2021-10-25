@@ -293,25 +293,13 @@
             });
         }
         var onClickSend = function () {
-            var botChatTab=document.getElementById('bot_chat_list')
-            var li_elements = botChatTab.getElementsByTagName("li");
-            var status=false;
-            var conversation_id=null
-            for (var i = 0, len = li_elements.length; i < len; i++ ) {
 
-                if (li_elements[i].classList.contains('active')){
-                    status=true
-                    conversation_id=li_elements[i].value
-                    break;
-                }
-            }
-
-            if (! status) {
-              alert('first select any conversation or create new consversation')
-
+            var conversation_id =$('#bot_chat_list').data( "chat_id" );
+            if (conversation_id) {
+                 typingMessage(conversation_id);
+                 newMessage();
             }else {
-                typingMessage(conversation_id);
-                newMessage();
+                alert('first select any conversation or create new consversation')
             }
 
 

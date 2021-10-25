@@ -111,8 +111,7 @@
 {% block extrajs %}
     <script type="text/javascript " src="{% static 'assets/js/jquery-3.3.1.min.js' %} "></script>
     <script>
-        var getBotChatContent = function (chat_id,url) {
-
+        var getBotChatContent = function (id,chat_id,url) {
             var botChatTab=document.getElementById('bot_chat_list')
             var li_elements = botChatTab.getElementsByTagName("li");
             for (var i = 0, len = li_elements.length; i < len; i++ ) {
@@ -120,6 +119,8 @@
             }
             var selectedConversation=document.getElementById(chat_id)
             selectedConversation.classList.add("active");
+            $('#bot_chat_list').data( "chat_id", id );
+
 
             $.ajax({
                 url:url,
