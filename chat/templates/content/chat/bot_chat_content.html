@@ -128,6 +128,14 @@
                 dataType: 'json',
                 success: function (data) {
                     $("#chat-append").html(data.html_chat_content);
+                    setTimeout(function() {
+                    var totalHeight=0;
+                    $("ul li").each(function() {
+                       totalHeight += $(this).outerHeight(true); // to include margins
+                    });
+                    console.log(totalHeight,'totalHeight')
+                    $(".messages").animate({scrollTop: totalHeight}, "fast");
+                    }, 1000);
                 }
             });
             return false;

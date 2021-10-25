@@ -268,10 +268,12 @@
             $('<li class="replies"> <div class="media"> <div class="profile mr-4 bg-size" style="background-image: {{ request.user.user_image.url }}; background-size: cover; background-position: center center;"></div><div class="media-body"> <div class="contact-name"> <h5>{{ request.user.first_name }} {{ request.user.last_name }}{{ request.user.profile_set.user_image.url }}</h5> <h6> '+time +' AM</h6> <ul class="msg-box"> <li> <h5>' + message + '</h5> </li></ul> </div></div></div></li>').appendTo($('.messages .chatappend'));
             $('.message-input input').val(null);
             $('.chat-main .active .details h6').html('<span>You : </span>' + message);
-            $(".messages").animate({ scrollTop: $(document).height() }, "fast");
+            var scroll = $(".messages").scrollTop()+500;
+            $(".messages").animate({ scrollTop: scroll }, "fast");
         };
         function typingMessage(id) {
-            $(".messages").animate({scrollTop: $(document).height()}, "fast");
+            var scroll = $(".messages").scrollTop()+500;
+            $(".messages").animate({scrollTop: scroll}, "fast");
 
             $('<li class="sent last typing-m"> <div class="media"> <div class="profile mr-4 bg-size" style="background-image: url(&quot;../assets/images/contact/2.jpg&quot;); background-size: cover; background-position: center center; display: block;"><img class="bg-img" src="../assets/images/contact/2.jpg" alt="Avatar" style="display: none;"></div><div class="media-body"> <div class="contact-name"> <h5>{{ request.user.first_name }} {{ request.user.last_name }}</h5> <h6>01:42 AM</h6> <ul class="msg-box"> <li> <h5> <div class="type"> <div class="typing-loader"></div></div></h5> </li></ul> </div></div></div></li>').appendTo($('.messages .chatappend'));
             $.ajax({
@@ -284,7 +286,8 @@
                 success: function (data) {
                      $('.typing-m').hide()
                      $(data.html_chat_response).appendTo($('.messages .chatappend'))
-                     $(".messages").animate({scrollTop: $(document).height()}, "fast");
+                     var scroll = $(".messages").scrollTop()+500;
+                     $(".messages").animate({scrollTop: scroll}, "fast");
 
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
