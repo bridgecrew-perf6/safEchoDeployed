@@ -119,7 +119,7 @@
             }
             var selectedConversation=document.getElementById(chat_id)
             selectedConversation.classList.add("active");
-            $('#bot_chat_list').data( "chat_id", id );
+            $('#bot_chat_list').attr( "data-chatid", id );
 
 
             $.ajax({

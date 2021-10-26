@@ -42,7 +42,7 @@
             <input class="setemoj" id="setemoj" type="text" placeholder="Write your message..."/>
 {#            <a class="icon-btn btn-outline-primary button-effect me-3 ms-3" href="#"><i#}
 {#                    data-feather="mic"> </i></a>#}
-            <button class="submit icon-btn btn-primary disabled" id="send-msg" disabled="disabled" onclick="onClickSend()"><i
+            <button class="submit icon-btn btn-primary disabled" id="send-msg" onclick="onClickSend()"><i
                     data-feather="send"> </i></button>
 {#            <div class="emojis-contain">#}
 {#                <div class="emojis-sub-contain custom-scroll">#}
@@ -297,7 +297,7 @@
         }
         var onClickSend = function () {
 
-            var conversation_id =$('#bot_chat_list').data( "chat_id" );
+            var conversation_id =$('#bot_chat_list').attr( "data-chatid" );
             if (conversation_id) {
                  typingMessage(conversation_id);
                  newMessage();
@@ -315,7 +315,13 @@
             {#    }#}
             {#});#}
             {#return false;#}
-        };
+        }
+
+        $("#setemoj").on("keydown", function (e) {
+            if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+                onClickSend()
+            }
+        })
 
 
     </script>
