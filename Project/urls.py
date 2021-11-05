@@ -24,6 +24,8 @@ urlpatterns = [
     path('', include('home.urls')),
     path('', include('chat.urls')),
     path('accounts/', include('accounts.urls')),
+    #  data scraping
+    path('', include('data.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'chat',
     # packgaes
     'phonenumber_field',
+    # data scraping
+    'data',
 ]
 
 MIDDLEWARE = [

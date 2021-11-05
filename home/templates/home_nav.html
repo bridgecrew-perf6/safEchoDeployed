@@ -33,6 +33,10 @@
                         <li class="nav-item"><a class="nav-link"
                                                 href="{% url 'login' %}">login</a>
                         </li>
+                    {% else %}
+                         <li class="nav-item"><a class="nav-link"
+                                                href="{% url 'logout' %}">logout</a>
+                         </li>
                     {% endif %}
                 </ul>
                 <div class="btn_purchase"><a class="btn"
