@@ -53,6 +53,7 @@ class CreateConversationView(LoginProfileRequiredMixin, TemplateView):
 
     def post(self, request, *args, **kwargs):
         data = dict()
+        # import pdb;pdb.set_trace()
         form = self.form(request.POST)
         form.instance.user = self.request.user.profile
         if form.is_valid():
