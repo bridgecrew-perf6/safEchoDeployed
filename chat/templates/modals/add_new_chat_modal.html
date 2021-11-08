@@ -55,6 +55,8 @@
                     success: function (data) {
                         if (data.form_is_valid) {
                             $("#newChatModal").modal("hide");
+                            var popUp = document.getElementById('newChatPopUp');
+                            $(popUp).removeClass('open')
                             getBotChatList()
                         } else {
                             $("#new_chat_form").html(data.html_new_chat_form);

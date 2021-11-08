@@ -58,6 +58,7 @@ class CreateConversationView(LoginProfileRequiredMixin, TemplateView):
 
     def post(self, request, *args, **kwargs):
         data = dict()
+        # import pdb;pdb.set_trace()
         form = self.form(request.POST)
         form.instance.user = self.request.user.profile
         if form.is_valid():
@@ -76,13 +77,14 @@ class SendMessageView(LoginProfileRequiredMixin, TemplateView):
 
     def post(self, request, *args, **kwargs):
         query = request.POST.get('message')
-        response = BotManagement().search_response(query)
-        text_response = response.get('choices')[0].get('text')
         conversation = get_object_or_404(Conversation, pk=kwargs['coversation_id'])
         chat = ConversationContent(conversation=conversation, query=query,
-                                   sender=request.user.profile,
-                                   response=text_response,
-                                   response_json=response)
+                                   sender=request.user.profile)
+        response = BotManagement().search_response(query)
+        text_response = response.get('choices')[0].get('text')
+        if response:
+            chat.response = text_response
+            chat.response_json = response
         chat.save()
         context = {'chat': chat}
         data = dict()
