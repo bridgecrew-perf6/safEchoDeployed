@@ -73,8 +73,8 @@ class ConversationContent(BaseModel):
     sender = models.ForeignKey(Profile, on_delete=models.CASCADE)
     conversation = models.ForeignKey(Conversation, on_delete=models.CASCADE)
     query = models.TextField()
-    response = models.TextField()
-    response_json = models.JSONField()
+    response = models.TextField(null=True)
+    response_json = models.JSONField(null=True)
 
     def __str__(self):
         return f"{self.sender}"
