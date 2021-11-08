@@ -9,6 +9,7 @@ from chat.models import Conversation, ConversationContent
 from .bot import get_bot_response
 from .bot import BotManagement
 from .forms import ConversationForm
+from django.urls import reverse
 
 
 class ChatView(LoginProfileRequiredMixin, TemplateView):
@@ -20,10 +21,14 @@ class GetChatListView(LoginProfileRequiredMixin, TemplateView):
     model = Conversation
 
     def get(self, request, *args, **kwargs):
-        chats = self.model.objects.all().order_by('created_at')
+        chats = self.model.objects.all().order_by('-created_at')
         context = {'chats': chats}
         data = dict()
         data['html_chat_list'] = render_to_string(self.template_name, context, request=request)
+        active_chat = chats.first()
+        data['id'] = active_chat.id
+        data['chat_id'] = 'chat_' + str(active_chat.id)
+        data['url'] = reverse('get_chat_content', kwargs={'pk': active_chat.id})
         return JsonResponse(data)
 
 
