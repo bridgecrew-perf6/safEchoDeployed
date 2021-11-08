@@ -85,10 +85,6 @@ class SendMessageView(LoginProfileRequiredMixin, TemplateView):
         if response:
             chat.response = text_response
             chat.response_json = response
-        # chat = ConversationContent(conversation=conversation, query=query,
-        #                            sender=request.user.profile,
-        #                            response=text_response,
-        #                            response_json=response)
         chat.save()
         context = {'chat': chat}
         data = dict()
