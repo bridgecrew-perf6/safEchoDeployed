@@ -132,6 +132,10 @@
                 dataType: 'json',
                 success: function (data) {
                     $("#bot_chat_list").html(data.html_chat_list);
+                    getBotChatContent(data.id,data.chat_id,data.url)
+                    {#console.log('data.html_chat_list',)#}
+                    {#console.log('data.chat_id',)#}
+                    {#console.log('data.url',)#}
                 }
             });
             return false;

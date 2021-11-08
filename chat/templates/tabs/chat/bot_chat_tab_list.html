@@ -1,6 +1,36 @@
 {% load static %}
 
 {% for chat in chats %}
+
+    {% if forloop.counter0 == 0 %}
+    <li id="chat_{{ chat.pk }}" value="{{ chat.pk }}" data-to="group_chat" onclick="getBotChatContent(  {{ chat.pk}},'chat_'+{{ chat.pk }},'{% url 'get_chat_content' pk=chat.pk %}')" class="active">
+        <div class="group-box">
+            <div class="profile"><img class="bg-img"
+                                      height="60px"
+                                      width="60px"
+                                      src="{{ chat.bot.logo.url}}"
+                                      alt="Avatar"/></div>
+            <div class="details">
+                <h5>{{ chat.name }}</h5>
+                <h6>{{ chat.conversationcontent_set.last.response }}</h6>
+            </div>
+            <div class="date-status">
+                <ul class="grop-icon">
+                    {#                        <li><a class="group-tp" href="#" data-tippy-content="Josephin"> <img#}
+                    {#                                src="{% static 'assets/images/contact/1.jpg' %}"#}
+                    {#                                alt="group-icon-img"/></a></li>#}
+                    {#                        <li><a class="group-tp" href="#" data-tippy-content="Jony "> <img#}
+                    {#                                src="{% static 'assets/images/contact/2.jpg' %}"#}
+                    {#                                alt="group-icon-img"/></a></li>#}
+                    {#                        <li><a class="group-tp" href="#" data-tippy-content="Pabelo"> <img#}
+                    {#                                src="{% static 'assets/images/contact/3.jpg' %}"#}
+                    {#                                alt="group-icon-img"/></a></li>#}
+                    <li>+ {{ chat.conversationcontent_set.count }}</li>
+                </ul>
+            </div>
+        </div>
+    </li>
+    {% else %}
     <li id="chat_{{ chat.pk }}" value="{{ chat.pk }}" data-to="group_chat" onclick="getBotChatContent(  {{ chat.pk}},'chat_'+{{ chat.pk }},'{% url 'get_chat_content' pk=chat.pk %}')">
         <div class="group-box">
             <div class="profile"><img class="bg-img"
@@ -28,4 +58,5 @@
             </div>
         </div>
     </li>
+     {% endif %}
 {% endfor %}
