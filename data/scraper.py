@@ -2,6 +2,7 @@ import os
 import fitz
 from django.conf import settings
 from bs4 import BeautifulSoup
+from pdfminer.high_level import extract_text
 
 
 def data_scraper(file_path):
@@ -21,14 +22,13 @@ def data_scraper(file_path):
     with fitz.open(file) as doc:
         for page in doc:
             page_text_html = page.get_textpage().extractHTML()
-            soup = BeautifulSoup(page_text_html, 'html.parser')
+            soup = BeautifulSoup(page_text_html, 'lxml')
 
             for line in soup.find_all('p'):
                 if line.find('b'):
                     print('heading: ' + line.get_text() + '\n')
                 else:
-                    pass
-                    # print(line.get_text())
+                    print(line.get_text())
 
     # print(doc.page_count, 'count')
     # text = ''
@@ -37,3 +37,10 @@ def data_scraper(file_path):
     #         text += page.getText()
     #         # break
     # print(text, 'hfgf')
+
+
+def data_scraper_two(file_path):
+    file = os.path.join(settings.MEDIA_ROOT, file_path)
+    text = extract_text(file)
+    print(text)
+
