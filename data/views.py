@@ -7,7 +7,7 @@ from django.contrib import messages
 from .auth_superuser import LoginSuperUserRequiredMixin
 from .forms import UploadFileForm
 from .utils import in_memory_file_to_temp
-from .scraper import data_scraper
+from .scraper import data_scraper, data_scraper_two
 
 
 class DocumentView(FormView):
@@ -25,6 +25,7 @@ class DocumentView(FormView):
             )
             messages.error(self.request, self.success_message)
             data_scraper(filepath)
+            # data_scraper_two(filepath)
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
