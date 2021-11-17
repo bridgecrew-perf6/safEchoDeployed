@@ -4,7 +4,7 @@ from datetime import datetime
 
 
 class ContentIndex(indexes.SearchIndex, indexes.Indexable):
-    text = indexes.CharField(document=True, use_template=True)
+    text = indexes.CharField(document=True, use_template=True,template_name="search/scrapedcontent_text.txt")
     heading = indexes.CharField(model_attr='heading')
     paragraph = indexes.DateTimeField(model_attr='paragraph')
 
