@@ -5,4 +5,5 @@ from . import views
 
 urlpatterns = [
     path('document', views.DocumentView.as_view(), name='document'),
+    path('search/', include('haystack.urls')),
 ]
