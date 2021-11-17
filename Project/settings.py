@@ -48,9 +48,15 @@ INSTALLED_APPS = [
     'chat',
     # packgaes
     'phonenumber_field',
-    # data scraping
+    'haystack',
     'data',
 ]
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -87,10 +93,9 @@ WSGI_APPLICATION = 'Project.wsgi.application'
 
 DATABASES = {
              'default': dj_database_url.parse(config('DATABASE_URL'), conn_max_age=600),
-             'contentdb': dj_database_url.parse(config('DATABASE2_URL'), conn_max_age=600)
              }
 
-DATABASE_ROUTERS = ['common.routers.CheckerRouter', ]
+# DATABASE_ROUTERS = ['common.routers.CheckerRouter', ]
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
