@@ -27,10 +27,17 @@ class UploadFileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.fields['document_title'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Document Title'})
-        self.fields['resource_url'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Document Source Url'})
-        self.fields['author_name'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Author Name'})
-        self.fields['published_year'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Published Year'})
-        self.fields['description'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Description'})
-        self.fields['number_of_pages'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Number of Pages'})
-        self.fields['file'].widget.attrs.update({'class': 'form-control', 'placeholder': 'File'})
+        self.fields['document_title'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Document Title',
+                                                           'style': 'margin-top: 8px; margin-bottom: 8px'})
+        self.fields['resource_url'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Document Source Url',
+                                                         'style': 'margin-top: 8px; margin-bottom: 8px'})
+        self.fields['author_name'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Author Name',
+                                                        'style': 'margin-top: 8px; margin-bottom: 8px'})
+        self.fields['published_year'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Published Year',
+                                                           'style': 'margin-top: 8px; margin-bottom: 8px'})
+        self.fields['description'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Description',
+                                                        'style': 'margin-top: 8px; margin-bottom: 8px'})
+        self.fields['number_of_pages'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Number of Pages',
+                                                            'style': 'margin-top: 8px; margin-bottom: 8px'})
+        self.fields['file'].widget.attrs.update({'class': 'form-control', 'placeholder': 'File',
+                                                 'style': 'margin-top: 8px; margin-bottom: 8px'})
