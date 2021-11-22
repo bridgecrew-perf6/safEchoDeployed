@@ -1,3 +1,5 @@
+import re
+
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -6,7 +8,7 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.http import JsonResponse
 from chat.models import Conversation, ConversationContent
-from .bot import get_bot_response
+from .bot import get_bot_response, get_bot_response_gptj
 from .bot import BotManagement
 from .forms import ConversationForm
 from django.urls import reverse
@@ -80,8 +82,15 @@ class SendMessageView(LoginProfileRequiredMixin, TemplateView):
         conversation = get_object_or_404(Conversation, pk=kwargs['coversation_id'])
         chat = ConversationContent(conversation=conversation, query=query,
                                    sender=request.user.profile)
-        response = BotManagement().search_response(query)
-        text_response = response.get('choices')[0].get('text')
+        if conversation.bot.api.type == 'gpt_j':
+            document = ["the cat ate the catnip", "the rabbit ate the carrot", "the horse ate the hay"]
+            response = get_bot_response_gptj(document, query)
+            text_response = response.get('result')[0]
+            text_response = re.sub(r"\bendoftext\b", '', text_response)
+            text_response = re.sub(r"[<|>?]", '', text_response)
+        else:
+            response = BotManagement().search_response(query)
+            text_response = response.get('choices')[0].get('text')
         if response:
             chat.response = text_response
             chat.response_json = response
