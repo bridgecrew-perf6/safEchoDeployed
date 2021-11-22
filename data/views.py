@@ -10,7 +10,7 @@ from .utils import in_memory_file_to_temp
 from .scraper import data_scraper, data_scraper_two
 
 
-class DocumentView(FormView):
+class DocumentView(FormView, LoginSuperUserRequiredMixin):
     form_class = UploadFileForm
     template_name = 'document.html'
     success_url = 'document'
