@@ -10,7 +10,7 @@ from .utils import in_memory_file_to_temp
 from .scraper import data_scraper, data_scraper_two
 
 
-class DocumentView(FormView):
+class DocumentView(FormView, LoginSuperUserRequiredMixin):
     form_class = UploadFileForm
     template_name = 'document.html'
     success_url = 'document'
@@ -20,12 +20,13 @@ class DocumentView(FormView):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         if form.is_valid():
-            filepath = os.path.join(
-                settings.MEDIA_ROOT, in_memory_file_to_temp(form.cleaned_data.get('file'))
-            )
+            # filepath = os.path.join(
+            #     settings.MEDIA_ROOT, in_memory_file_to_temp(form.cleaned_data.get('file'))
+            # )
             messages.error(self.request, self.success_message)
-            data_scraper(filepath)
-            # data_scraper_two(filepath)
+            doc_obj = form.save()
+            data_scraper(doc_obj)
+            # data_scraper_two(doc_obj.file.name)
             return self.form_valid(form)
         else:
             return self.form_invalid(form)

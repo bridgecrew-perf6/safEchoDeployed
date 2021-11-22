@@ -9,8 +9,8 @@ from pdfminer.high_level import extract_text
 from data.models import ScrapedContent
 
 
-def data_scraper(file_path):
-    file = os.path.join(settings.MEDIA_ROOT, file_path)
+def data_scraper(document):
+    file = os.path.join(settings.MEDIA_ROOT, document.file.name)
     # doc = fitz.open(file)
     # page = doc.load_page(0)
     # page_text_html = page.get_textpage().extractHTML()
@@ -26,7 +26,6 @@ def data_scraper(file_path):
     with fitz.open(file) as doc:
         for page in doc:
             page_text_html = page.get_textpage().extractHTML()
-            print(page_text_html)
             soup = BeautifulSoup(page_text_html, 'lxml')
 
             heading = ''
@@ -43,7 +42,7 @@ def data_scraper(file_path):
                     else:
                         old_heading = heading
 
-                content, _ = ScrapedContent.objects.get_or_create(heading=heading)
+                content, _ = ScrapedContent.objects.get_or_create(document=document, heading=heading, page_number=page.number)
                 content.paragraph = paragraph
                 content.save()
 
