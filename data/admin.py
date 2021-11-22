@@ -1,11 +1,19 @@
 from django.contrib import admin
 
-from data.models import ScrapedContent
+from data.models import ScrapedContent, Document
 
 
 @admin.register(ScrapedContent)
 class ScrapedContentAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in ScrapedContent._meta.fields]
+    list_display = ['id', 'document', 'heading', 'page_number']
     ordering = ['id']
     list_display_links = ['id']
-    search_fields = ('name',)
+    search_fields = ('heading',)
+
+
+@admin.register(Document)
+class DocumentAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Document._meta.fields]
+    ordering = ['id']
+    list_display_links = ['id']
+    search_fields = ('document_title', 'author_name')
