@@ -1,6 +1,10 @@
 import openai
 import os
 
+import requests
+
+GPTJ_headers = {"Authorization": os.getenv("FOREFRONT_GPTJ_API_KEY")}
+GPTJ_URL = 'https://7344f216-search-qa-safecho.forefront.link/'
 
 def get_bot_response(query):
     openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -17,6 +21,21 @@ def get_bot_response(query):
     )
     print(response)
     return response
+
+
+def get_bot_response_gptj(document, query):
+    data = {
+        "documents": document,
+        "query": query
+    }
+
+    response = requests.post(
+        GPTJ_URL + 'answer',
+        json=data,
+        headers=GPTJ_headers
+    )
+    print(response.json())
+    return response.json()
 
 
 class BotManagement(object):

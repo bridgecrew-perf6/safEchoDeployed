@@ -12,7 +12,7 @@
                                       alt="Avatar"/></div>
             <div class="details">
                 <h5>{{ chat.name }}</h5>
-                <h6>{{ chat.conversationcontent_set.last.response }}</h6>
+                <h6>{{ chat.conversationcontent_set.last.response | truncatechars:15 }}</h6>
             </div>
             <div class="date-status">
                 <ul class="grop-icon">
