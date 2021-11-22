@@ -11,16 +11,6 @@ class BaseModel(models.Model):
         abstract = True
 
 
-class Bot(BaseModel):
-    name = models.CharField(max_length=25, unique=True)
-    description = models.CharField(max_length=300)
-    logo = models.ImageField(upload_to='bot_logo/')
-    application = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"{self.name}"
-
-
 class GPTApi(BaseModel):
     GPT_3 = 'gpt_3'
     GPT_j = 'gpt_j'
@@ -32,6 +22,17 @@ class GPTApi(BaseModel):
     type = models.CharField(max_length=20, choices=GPT_CHOICES, default=GPT_j)
     key = models.CharField(max_length=750)
     url = models.URLField()
+
+    def __str__(self):
+        return f"{self.name}"
+
+
+class Bot(BaseModel):
+    name = models.CharField(max_length=25, unique=True)
+    description = models.CharField(max_length=300)
+    logo = models.ImageField(upload_to='bot_logo/')
+    application = models.DateTimeField(auto_now_add=True)
+    api = models.ForeignKey(GPTApi, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return f"{self.name}"
