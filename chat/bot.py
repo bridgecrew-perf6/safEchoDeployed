@@ -3,15 +3,17 @@ import os
 
 import requests
 from data.models import ScrapedContent
+from haystack.query import SearchQuerySet
 
 
 def elastic_search_results(query):
-    print(query,'query')
-    # document = ["the cat ate the catnip", "the rabbit ate the carrot", "the horse ate the hay"]
-    document = list(
-        ScrapedContent.objects.filter(heading__icontains=query, paragraph__icontains=query).values_list('paragraph',
-                                                                                                        flat=True))
-    print(document, 'list ')
+    document = []
+    print(query, 'query')
+    sqs = SearchQuerySet().filter(content_auto=query)
+    query_list = sqs[:10]
+    for query in query_list:
+        document.append(query.object.paragraph)
+    print(document)
     return document
 
 

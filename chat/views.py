@@ -84,9 +84,10 @@ class SendMessageView(LoginProfileRequiredMixin, TemplateView):
                                    sender=request.user.profile)
         if conversation.bot.api.type == 'gpt_j':
             response = get_bot_response_gptj(conversation.bot, query)
-            # text_response = response.get('result')[0]
-            # text_response = re.sub(r"\bendoftext\b", '', text_response)
-            # text_response = re.sub(r"[<|>?]", '', text_response)
+            print(response)
+            text_response = response.get('result')[0]
+            text_response = re.sub(r"\bendoftext\b", '', text_response)
+            text_response = re.sub(r"[<|>?]", '', text_response)
         else:
             response = BotManagement().search_response(query)
             text_response = response.get('choices')[0].get('text')
