@@ -7,7 +7,7 @@ from accounts.auth_middleware import LoginProfileRequiredMixin
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.http import JsonResponse
-from chat.models import Conversation, ConversationContent
+from chat.models import Conversation, ConversationContent, Bot
 from .bot import get_bot_response, get_bot_response_gptj
 from .bot import BotManagement
 from .forms import ConversationForm
@@ -83,11 +83,10 @@ class SendMessageView(LoginProfileRequiredMixin, TemplateView):
         chat = ConversationContent(conversation=conversation, query=query,
                                    sender=request.user.profile)
         if conversation.bot.api.type == 'gpt_j':
-            document = ["the cat ate the catnip", "the rabbit ate the carrot", "the horse ate the hay"]
-            response = get_bot_response_gptj(document, query)
-            text_response = response.get('result')[0]
-            text_response = re.sub(r"\bendoftext\b", '', text_response)
-            text_response = re.sub(r"[<|>?]", '', text_response)
+            response = get_bot_response_gptj(conversation.bot, query)
+            # text_response = response.get('result')[0]
+            # text_response = re.sub(r"\bendoftext\b", '', text_response)
+            # text_response = re.sub(r"[<|>?]", '', text_response)
         else:
             response = BotManagement().search_response(query)
             text_response = response.get('choices')[0].get('text')

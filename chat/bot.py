@@ -2,9 +2,18 @@ import openai
 import os
 
 import requests
+from data.models import ScrapedContent
 
-GPTJ_headers = {"Authorization": os.getenv("FOREFRONT_GPTJ_API_KEY")}
-GPTJ_URL = 'https://7344f216-search-qa-safecho.forefront.link/'
+
+def elastic_search_results(query):
+    print(query,'query')
+    # document = ["the cat ate the catnip", "the rabbit ate the carrot", "the horse ate the hay"]
+    document = list(
+        ScrapedContent.objects.filter(heading__icontains=query, paragraph__icontains=query).values_list('paragraph',
+                                                                                                        flat=True))
+    print(document, 'list ')
+    return document
+
 
 def get_bot_response(query):
     openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -23,18 +32,21 @@ def get_bot_response(query):
     return response
 
 
-def get_bot_response_gptj(document, query):
+def get_bot_response_gptj(bot, query):
+    headers = {
+        "Authorization": 'Bearer ' + bot.api.key
+    }
+    url = bot.api.url + 'answer'
+    document = elastic_search_results(query)
     data = {
         "documents": document,
         "query": query
     }
-
     response = requests.post(
-        GPTJ_URL + 'answer',
+        url,
         json=data,
-        headers=GPTJ_headers
+        headers=headers
     )
-    print(response.json())
     return response.json()
 
 
@@ -60,5 +72,4 @@ class BotManagement(object):
             presence_penalty=0.0,
             stop=["\n"]
         )
-        print(response)
         return response
