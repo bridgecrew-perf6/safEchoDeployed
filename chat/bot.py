@@ -10,7 +10,7 @@ def elastic_search_results(query):
     document = []
     print(query, 'query')
     sqs = SearchQuerySet().filter(content_auto=query)
-    query_list = sqs[:10]
+    query_list = sqs[:3]
     for query in query_list:
         document.append(query.object.paragraph)
     print(document)
@@ -38,17 +38,20 @@ def get_bot_response_gptj(bot, query):
     headers = {
         "Authorization": 'Bearer ' + bot.api.key
     }
-    url = bot.api.url + 'answer'
     document = elastic_search_results(query)
+    if len(document) == 0:
+        document = ["How may i help you", "Hi do you need help"]
+
     data = {
         "documents": document,
         "query": query
     }
     response = requests.post(
-        url,
+        bot.api.url,
         json=data,
         headers=headers
     )
+    print(response.status_code)
     return response.json()
 
 
