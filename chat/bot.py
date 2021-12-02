@@ -4,12 +4,13 @@ import os
 import requests
 from data.models import ScrapedContent
 from haystack.query import SearchQuerySet
+from django.db.models import Q
 
 
 def elastic_search_results(query):
     document = []
     print(query, 'query')
-    sqs = SearchQuerySet().filter(content_auto=query)
+    sqs = SearchQuerySet().filter(Q(paragraph=query) | Q(heading=query))
     query_list = sqs[:3]
     for query in query_list:
         document.append(query.object.paragraph)
