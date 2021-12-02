@@ -37,7 +37,7 @@ def get_bot_response(query):
 
 def get_bot_response_gptj(bot, query):
     headers = {
-        "Authorization": 'Bearer ' + bot.api.key
+        "Authorization": bot.api.key
     }
     document = elastic_search_results(query)
     if len(document) == 0:
@@ -54,6 +54,38 @@ def get_bot_response_gptj(bot, query):
     )
     print(response.status_code)
     return response.json()
+
+
+def get_bot_answers(bot, query):
+    openai.api_key = bot.api.key
+    response = openai.Answer.create(
+        search_model="ada",
+        model="curie",
+        question=query + '?',
+        documents=elastic_search_results(query),
+        examples_context="In 2017, U.S. life expectancy was 78.6 years.",
+        examples=[["What is human life expectancy in the United States?", "78 years."]],
+        max_tokens=5,
+        stop=["\n", "<|endoftext|>"],
+    )
+    print(response)
+    return response
+
+
+def upload_document_to_openapi(bot, json1):
+    """
+    Example Json1
+
+    {"text": "puppy A is happy", "metadata": "emotional state of puppy A"}
+    {"text": "puppy B is sad", "metadata": "emotional state of puppy B"}
+
+    TODO: Find a way to convert the document / elastic search query to json
+    """
+    openai.api_key = bot.api.key
+    response = openai.File.create(file=open("myfile.jsonl"), purpose='answers')
+
+    print(response)
+    return response
 
 
 class BotManagement(object):
