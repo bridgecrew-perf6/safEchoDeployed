@@ -8,7 +8,7 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.http import JsonResponse
 from chat.models import Conversation, ConversationContent, Bot
-from .bot import get_bot_response, get_bot_response_gptj
+from .bot import get_bot_response, get_bot_response_gptj, get_bot_answers
 from .bot import BotManagement
 from .forms import ConversationForm
 from django.urls import reverse
@@ -88,9 +88,12 @@ class SendMessageView(LoginProfileRequiredMixin, TemplateView):
             text_response = response.get('result')[0]
             text_response = re.sub(r"\bendoftext\b", '', text_response)
             text_response = re.sub(r"[<|>?]", '', text_response)
-        else:
+        elif conversation.bot.api.type == 'gpt_3' and conversation.bot.api.subtype == 'q&a':
             response = BotManagement().search_response(query)
             text_response = response.get('choices')[0].get('text')
+        elif conversation.bot.api.type == 'gpt_3' and conversation.bot.api.subtype == 'answers':
+            response = get_bot_answers(conversation.bot, query, conversation)
+            text_response = response.get('answers')[0]
         if response:
             chat.response = text_response
             chat.response_json = response
