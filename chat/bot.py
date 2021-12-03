@@ -9,7 +9,7 @@ from django.db.models import Q
 
 def elastic_search_results(query):
     document = []
-    print(query, 'query')
+    # print(query, 'query')
     sqs = SearchQuerySet().filter(Q(paragraph=query) | Q(heading=query))
     query_list = sqs[:3]
     for query in query_list:
@@ -56,15 +56,24 @@ def get_bot_response_gptj(bot, query):
     return response.json()
 
 
-def get_bot_answers(bot, query):
+def get_bot_answers(bot, query, context):
+    if not context.conversationcontent_set.last():
+        context_data = "In 2017, U.S. life expectancy was 78.6 years."
+        queries = [["What is human life expectancy in the United States?", "78 years."]]
+    else:
+        context_data = context.conversationcontent_set.last().response
+        queries = [[q.query for q in context.conversationcontent_set.all()][:2]]
+        if len(queries) <= 2:
+            queries = [["What is human life expectancy in the United States?", "78 years."]]
+
     openai.api_key = bot.api.key
     response = openai.Answer.create(
         search_model="ada",
         model="curie",
         question=query + '?',
         documents=elastic_search_results(query),
-        examples_context="In 2017, U.S. life expectancy was 78.6 years.",
-        examples=[["What is human life expectancy in the United States?", "78 years."]],
+        examples_context=context_data,
+        examples=queries,
         max_tokens=5,
         stop=["\n", "<|endoftext|>"],
     )
