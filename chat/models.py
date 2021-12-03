@@ -18,8 +18,17 @@ class GPTApi(BaseModel):
         (GPT_3, 'GPT - 3'),
         (GPT_j, 'GPT - j'),
     )
+    NONE = 'none'
+    QNA = 'q&a'
+    ANSWERS = 'answers'
+    SUBTYPES = (
+        (NONE, 'None'),
+        (QNA, 'Q&A'),
+        (ANSWERS, 'Answers'),
+    )
     name = models.CharField(max_length=25, unique=True)
     type = models.CharField(max_length=20, choices=GPT_CHOICES, default=GPT_j)
+    subtype = models.CharField(max_length=20, choices=SUBTYPES, default=NONE)
     key = models.CharField(max_length=750)
     url = models.URLField()
 
