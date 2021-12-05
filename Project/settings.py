@@ -101,17 +101,6 @@ WSGI_APPLICATION = 'Project.wsgi.application'
 #              'default': dj_database_url.parse(config('DATABASE_URL'), conn_max_age=600),
 #              }
 
-DATABASES = {
-    'default':{
-        'ENGINE':'django.db.backends.postgresql',
-        'NAME':'safecho',
-        'USER':'postgres',
-        'PASSWORD':'password',
-        'HOST':'localhost',
-        'PORT':'5432'
-    }
-}
-
 # DATABASE_ROUTERS = ['common.routers.CheckerRouter', ]
 
 # Password validation
