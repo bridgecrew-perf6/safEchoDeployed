@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('', include('chat.urls')),
     path('accounts/', include('accounts.urls')),
+    path('maintenance-mode/', include('maintenance_mode.urls')),
     #  data scraping
     path('', include('data.urls')),
 ]

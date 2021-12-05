@@ -92,3 +92,14 @@ Get and Update Products/Packages from Stripe
 
     docker-compose exec web python manage.py djstripe_sync_plans_from_stripe
     
+# Use the platform
+
+Set the platform in maintenance state (in terminal):
+
+    python manage.py maintenance_mode <on|off>
+
+Set the platform in maintenance state (url):
+
+    localhost/maintenance-mode/on/
+    localhost/maintenance-mode/off/
+    

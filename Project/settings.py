@@ -32,6 +32,10 @@ SECRET_KEY = 'django-insecure-h0-poj@ulxuzmy3ib8w4m#w#-ddnb&uxv5h$9dksu@%(=^g^xa
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Maintenance-mode: True = activated
+# https://github.com/fabiocaccamo/django-maintenance-mode
+MAINTENANCE_MODE = None
+
 ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -49,6 +53,7 @@ INSTALLED_APPS = [
     # packgaes
     'phonenumber_field',
     'haystack',
+    'maintenance_mode',
     'data',
 ]
 
@@ -66,6 +71,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'maintenance_mode.middleware.MaintenanceModeMiddleware',
 ]
 
 ROOT_URLCONF = 'Project.urls'
@@ -91,9 +97,20 @@ WSGI_APPLICATION = 'Project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#              'default': dj_database_url.parse(config('DATABASE_URL'), conn_max_age=600),
+#              }
+
 DATABASES = {
-             'default': dj_database_url.parse(config('DATABASE_URL'), conn_max_age=600),
-             }
+    'default':{
+        'ENGINE':'django.db.backends.postgresql',
+        'NAME':'safecho',
+        'USER':'postgres',
+        'PASSWORD':'password',
+        'HOST':'localhost',
+        'PORT':'5432'
+    }
+}
 
 # DATABASE_ROUTERS = ['common.routers.CheckerRouter', ]
 
