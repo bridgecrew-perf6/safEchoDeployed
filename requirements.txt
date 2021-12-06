@@ -41,8 +41,7 @@ openai==0.10.5
 openpyxl==3.0.9
 packaging==21.2
 pandas
-pandas-stubs==1.2.0.33
-pathlib
+pandas-stubs
 pdfminer.six==20211012
 phonenumbers==8.12.31
 Pillow==8.3.2
