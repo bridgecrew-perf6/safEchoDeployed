@@ -99,8 +99,8 @@ WSGI_APPLICATION = 'Project.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-             'default': dj_database_url.parse(config('DATABASE_URL'), conn_max_age=600),
-             }
+    'default': dj_database_url.parse(config('DATABASE_URL'), conn_max_age=600),
+}
 
 # DATABASE_ROUTERS = ['common.routers.CheckerRouter', ]
 
@@ -165,3 +165,6 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+DEEPL_KEY = config('DEEPL_KEY')
+DETECT_LANGUAGE_KEY = config('DETECT_LANGUAGE_KEY')
