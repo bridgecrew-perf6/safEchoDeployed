@@ -1,10 +1,10 @@
 from django.contrib import admin
-
+from import_export.admin import ImportExportModelAdmin, ImportMixin, ExportMixin
 from data.models import ScrapedContent, Document
 
 
 @admin.register(ScrapedContent)
-class ScrapedContentAdmin(admin.ModelAdmin):
+class ScrapedContentAdmin(ImportExportModelAdmin):
     list_display = ['id', 'document', 'heading', 'page_number']
     ordering = ['id']
     list_display_links = ['id']
