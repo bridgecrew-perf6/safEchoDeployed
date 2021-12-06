@@ -15,7 +15,7 @@ def elastic_search_results(query):
     for query in query_list:
         document.append(query.object.paragraph)
     print(document)
-    return document
+    return query, document
 
 
 def get_bot_response(query):
@@ -39,13 +39,13 @@ def get_bot_response_gptj(bot, query):
     headers = {
         "Authorization": bot.api.key
     }
-    document = elastic_search_results(query)
+    qs, document = elastic_search_results(query)
     if len(document) == 0:
         document = ["How may i help you", "Hi do you need help"]
 
     data = {
         "documents": document,
-        "query": query
+        "query": qs
     }
     response = requests.post(
         bot.api.url,
@@ -66,12 +66,14 @@ def get_bot_answers(bot, query, context):
         if len(queries) <= 2:
             queries = [["What is human life expectancy in the United States?", "78 years."]]
 
+    qs, document = elastic_search_results(query)
+
     openai.api_key = bot.api.key
     response = openai.Answer.create(
         search_model="ada",
         model="curie",
-        question=query + '?',
-        documents=elastic_search_results(query),
+        question=qs + '?',
+        documents=document,
         examples_context=context_data,
         examples=queries,
         max_tokens=5,
@@ -108,7 +110,6 @@ class BotManagement(object):
     def search_response(self, query):
         openai.api_key = self.api_key
         prompt = 'Q: ' + query + '?\nA:'
-        # prompt = query
         response = openai.Completion.create(
             engine="davinci",
             prompt=prompt,
