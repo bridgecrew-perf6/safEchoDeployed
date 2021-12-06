@@ -79,3 +79,4 @@ wcwidth==0.2.5
 django-haystack
 django-haystack[elasticsearch]
 django-maintenance-mode
+django-import-export
