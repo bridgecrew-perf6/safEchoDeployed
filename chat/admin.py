@@ -2,6 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from chat.models import Conversation, ConversationContent, Bot, GPTApi, Engine, GPTPrompt
+from import_export.admin import ImportExportModelAdmin, ImportMixin, ExportMixin
 
 
 @admin.register(Conversation)
@@ -29,7 +30,7 @@ class BotAdmin(admin.ModelAdmin):
 
 
 @admin.register(GPTApi)
-class GPTApiAdmin(admin.ModelAdmin):
+class GPTApiAdmin(ImportExportModelAdmin):
     list_display = [field.name for field in GPTApi._meta.fields]
     ordering = ['id']
     list_display_links = ['id']
