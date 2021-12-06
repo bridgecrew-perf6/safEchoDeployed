@@ -80,3 +80,4 @@ django-haystack
 django-haystack[elasticsearch]
 django-maintenance-mode
 django-import-export
+deep_translator
