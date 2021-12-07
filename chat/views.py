@@ -8,7 +8,7 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.http import JsonResponse
 from chat.models import Conversation, ConversationContent, Bot
-from .bot import get_bot_response, get_bot_response_gptj, get_bot_answers
+from .bot import get_gpt_j_bot_response
 from .bot import BotManagement
 from .forms import ConversationForm
 from django.urls import reverse
@@ -82,21 +82,10 @@ class SendMessageView(LoginProfileRequiredMixin, TemplateView):
         conversation = get_object_or_404(Conversation, pk=kwargs['coversation_id'])
         chat = ConversationContent(conversation=conversation, query=query,
                                    sender=request.user.profile)
-        if conversation.bot.api.type == 'gpt_j':
-            response = get_bot_response_gptj(conversation.bot, query)
-            print(response)
-            text_response = response.get('result')[0]
-            text_response = re.sub(r"\bendoftext\b", '', text_response)
-            text_response = re.sub(r"[<|>?]", '', text_response)
-        elif conversation.bot.api.type == 'gpt_3' and conversation.bot.api.subtype == 'q&a':
-            response = BotManagement().search_response(query)
-            text_response = response.get('choices')[0].get('text')
-        elif conversation.bot.api.type == 'gpt_3' and conversation.bot.api.subtype == 'answers':
-            response = get_bot_answers(conversation.bot, query, conversation)
-            text_response = response.get('answers')[0]
-        if response:
+        response_status, text_response, json_response = BotManagement(conversation).search(query)
+        if response_status == 200:
             chat.response = text_response
-            chat.response_json = response
+            chat.response_json = json_response
         chat.save()
         context = {'chat': chat}
         data = dict()
