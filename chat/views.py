@@ -86,7 +86,8 @@ class SendMessageView(LoginProfileRequiredMixin, TemplateView):
         if response_status == 200:
             chat.response = text_response
             chat.response_json = json_response
-        chat.save()
+            chat.save()
+
         context = {'chat': chat}
         data = dict()
         data['html_chat_response'] = render_to_string(self.template_name, context, request=request)

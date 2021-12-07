@@ -81,19 +81,24 @@ class BotManagement:
             examples = [[q.query for q in self.conversation.conversationcontent_set.all()][:2]]
             if examples_context is None:
                 return self.get_default_context()
-            if len(examples) <= 2:
+            if len(examples[0]) < 2:
                 return self.get_default_context()
+            return examples_context, examples
         else:
             return self.get_default_context()
-        return examples_context, examples
 
     def parse_gpt3_answers(self, response):
-        self.text_response = response.get('answers')[0]
+        if response.get('selected_documents'):
+            self.text_response = response.get('selected_documents')[0].get('text')
+        else:
+            self.text_response = response.get('answers')[0]
         self.json_response = response
 
     def search_gpt3_answers(self):
         qs, document = elastic_search_results(self.query)
         examples_context, examples = self.get_latest_context()
+        print(examples, 'examples')
+        print(examples_context, 'examples context')
         response = openai.Answer.create(
             search_model="ada",
             model="curie",
