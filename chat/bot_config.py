@@ -24,7 +24,7 @@ class BotManagement:
         self.conversation = conversation
         self.key = conversation.bot.api.key
         self.sub_type = conversation.bot.api.subtype
-        self.default_language = 'EN'
+        self.default_language = 'en'
         self.translated_language = None
         self.default_query = ''
         self.translated_query = ''
