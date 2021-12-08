@@ -26,8 +26,13 @@ def detect_language(text):
     return lang
 
 
-def translate_text_by_google(text):
-    translated = GoogleTranslator(source='auto', target='EN').translate(text=text)
+# def translate_text_by_google(text):
+#     translated = GoogleTranslator(source='auto', target='EN').translate(text=text)
+#     return translated
+
+
+def translate_text_by_google(lang, text):
+    translated = GoogleTranslator(source='auto', target=lang).translate(text=text)
     return translated
 
 
@@ -72,7 +77,6 @@ def translate_text_by_deepL_api(text):
         result = result.get('translations')
 
     return result
-
 
 # print(translate_text_by_google(text))
 # print(translate_text_list_by_google(text_list))

@@ -9,7 +9,8 @@ from django.template.loader import render_to_string
 from django.http import JsonResponse
 from chat.models import Conversation, ConversationContent, Bot
 from .bot import get_gpt_j_bot_response
-from .bot import BotManagement
+# from .bot import BotManagement
+from .bot_config import BotManagement
 from .forms import ConversationForm
 from django.urls import reverse
 
