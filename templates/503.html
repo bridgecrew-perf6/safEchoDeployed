@@ -1,0 +1,37 @@
+{% load i18n %}
+{% load static %}
+<!-- Maintenance page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SafEcho // Maintenance</title>
+    <link href="{% static '/dist/css/style.min.css' %}" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container-error">
+        <div class="row">
+            <div class="xs-12 md-6 mx-auto-error">
+                <div id="countUp">
+                    <div class="text-error-title">{% blocktrans %} SafEcho {% endblocktrans %}</div>
+                        <div class="text-error-under">{% blocktrans %} Finally, get the help you need at any moment, but: {% endblocktrans %}</div>
+                    <div class="number" id="countdown" style="color: #FF6363;">
+                        We are still building it
+                    </div>
+                    <div class="text-error-under">{% blocktrans %}A bit more patience, it is <b>COMING</b> !{% endblocktrans %}</div>
+                    <!-- <div class="text-error-under">{% blocktrans %} The platform will be soon available :){% endblocktrans %}</div> -->
+                </div>
+            </div>
+        </div>
+    </div>  
+    
+</body>
+<!-- <script src="{% static 'assets/libs/in-view/in-view.min.js' %}"></script> -->
+<!-- <script src="{% static 'assets/libs/jquery/dist/jquery.min.js' %}"></script> -->
+<!-- <script src="{% static 'assets/libs/countdown/countdown.js' %}"></script> -->
+
+</html>
+ 
