@@ -8,7 +8,7 @@ class ScrapedContentAdmin(ImportExportModelAdmin):
     list_display = ['id', 'document', 'heading', 'page_number']
     ordering = ['id']
     list_display_links = ['id']
-    search_fields = ('heading',)
+    search_fields = ('heading', 'default_heading', 'paragraph', 'default_paragraph')
 
 
 @admin.register(Document)
