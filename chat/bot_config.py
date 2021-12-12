@@ -6,15 +6,17 @@ from haystack.query import SearchQuerySet
 from django.db.models import Q
 from chat.models import GPTApi
 from .translation import detect_language, translate_text_by_google
+import re
 
 
 def elastic_search_results(query):
+    query = re.sub(r'[?|$|.|!]', r'', query)
     document = []
     sqs = SearchQuerySet().filter(Q(paragraph=query) | Q(heading=query))
-    query_list = sqs[:3]
+    query_list = sqs[:5]
     for query in query_list:
         document.append(query.object.paragraph)
-    print(document, 'eslastic saerch response')
+    # print(document, 'eslastic saerch response')
     return document
 
 
@@ -42,10 +44,10 @@ class BotManagement:
         # always return response in english
         documents = elastic_search_results(query)
         if len(documents) >= 1:
-            print('bot answer ')
+            # print('bot answer ')
             self.search_gpt3_answers(query, documents)
         else:
-            print('bot completion ')
+            # print('bot completion ')
             self.search_GT3_Completion(query)
 
     #    gtp3 completion
@@ -76,8 +78,8 @@ class BotManagement:
 
     def search_gpt3_answers(self, query, document):
         examples_context, examples = self.get_latest_context()
-        print(examples, 'examples')
-        print(examples_context, 'examples context')
+        # print(examples, 'examples')
+        # print(examples_context, 'examples context')
         response = openai.Answer.create(
             search_model="ada",
             model="curie",
@@ -93,7 +95,7 @@ class BotManagement:
     def get_latest_context(self):
         if self.conversation.conversationcontent_set.last():
             examples_context = self.conversation.conversationcontent_set.last().response
-            examples = [[q.query for q in self.conversation.conversationcontent_set.all()][:2]]
+            examples = [[q.query, q.response] for q in self.conversation.conversationcontent_set.all()][-2:]
             if examples_context is None:
                 return self.get_default_context()
             if len(examples[0]) < 2:
