@@ -95,7 +95,7 @@ class BotManagement:
     def get_latest_context(self):
         if self.conversation.conversationcontent_set.last():
             examples_context = self.conversation.conversationcontent_set.last().response
-            examples = [[q.query for q in self.conversation.conversationcontent_set.all()][:2]]
+            examples = [[q.query, q.response] for q in self.conversation.conversationcontent_set.all()][-2:]
             if examples_context is None:
                 return self.get_default_context()
             if len(examples[0]) < 2:
