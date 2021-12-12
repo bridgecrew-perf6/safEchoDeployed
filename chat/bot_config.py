@@ -4,18 +4,38 @@ import requests
 from data.models import ScrapedContent
 from haystack.query import SearchQuerySet
 from django.db.models import Q
+from haystack.query import SQ
 from chat.models import GPTApi
 from .translation import detect_language, translate_text_by_google
 import re
 
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+import nltk
+
 
 def elastic_search_results(query):
+    stop_words = set(stopwords.words('english'))
     query = re.sub(r'[?|$|.|!]', r'', query)
+    word_tokens = word_tokenize(query)
+    filtered_sentence = [w for w in word_tokens if not w.lower() in stop_words]
+    query = ' '.join(filtered_sentence)
+    print(query)
+
     document = []
-    sqs = SearchQuerySet().filter(Q(paragraph=query) | Q(heading=query))
-    query_list = sqs[:5]
+
+    #  for query directlt to db
+    query_list = ScrapedContent.objects.filter(heading__search=query)
+    query_list = query_list[:10]
     for query in query_list:
-        document.append(query.object.paragraph)
+        document.append(query.paragraph)
+    print(document)
+
+    #  for elastic search
+    # sqs = SearchQuerySet().filter(Q(paragraph=query) | Q(heading=query))
+    # query_list = sqs[:5]
+    # for query in query_list:
+    #     document.append(query.object.paragraph)
     # print(document, 'eslastic saerch response')
     return document
 
