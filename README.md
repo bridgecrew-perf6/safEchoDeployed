@@ -103,3 +103,10 @@ Set the platform in maintenance state (url):
     localhost/maintenance-mode/on/
     localhost/maintenance-mode/off/
     
+Redis For docker in .env file
+    
+    REDIS_URL=redis://redis:6379
+
+for Non Docker 
+    
+    REDIS_URL=redis://localhost:6379/0
