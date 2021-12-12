@@ -33,6 +33,7 @@ class BotManagement:
         self.text_response = 'some thing went wrong'
         self.json_response = {}
         self.response_status = 200
+        self.gp3_type = ''
 
     def set_response(self):
         query = self.default_query
@@ -46,9 +47,11 @@ class BotManagement:
         if len(documents) >= 1:
             # print('bot answer ')
             self.search_gpt3_answers(query, documents)
+            self.gp3_type = 'Answer'
         else:
             # print('bot completion ')
             self.search_GT3_Completion(query)
+            self.gp3_type = 'Completion'
 
     #    gtp3 completion
 
@@ -127,4 +130,4 @@ class BotManagement:
     def search(self, query):
         self.default_query = query
         self.set_response()
-        return self.response_status, self.text_response, self.json_response
+        return self.response_status, self.text_response, self.json_response, self.gp3_type
