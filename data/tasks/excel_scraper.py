@@ -24,8 +24,8 @@ def translate_save_data(data, document, index):
     default_heading = data['default_heading']
     default_paragraph = data['default_paragraph']
 
-    heading = translate_text_by_google('EN', default_heading)
-    paragraph = translate_text_by_google('EN', default_paragraph)
+    heading = translate_text_by_google('en', default_heading)
+    paragraph = translate_text_by_google('en', default_paragraph)
     result = {'heading': heading, 'paragraph': paragraph, 'default_heading': default_heading,
               'default_paragraph': default_paragraph, 'document': document, 'page_number': index}
 

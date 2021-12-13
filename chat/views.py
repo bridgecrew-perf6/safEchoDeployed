@@ -83,13 +83,13 @@ class SendMessageView(LoginProfileRequiredMixin, TemplateView):
         conversation = get_object_or_404(Conversation, pk=kwargs['coversation_id'])
         chat = ConversationContent(conversation=conversation, query=query,
                                    sender=request.user.profile)
-        response_status, text_response, json_response = BotManagement(conversation).search(query)
+        response_status, text_response, json_response, gtp3_type = BotManagement(conversation).search(query)
         if response_status == 200:
             chat.response = text_response
             chat.response_json = json_response
             chat.save()
 
-        context = {'chat': chat}
+        context = {'chat': chat, 'gtp3_type': gtp3_type}
         data = dict()
         data['html_chat_response'] = render_to_string(self.template_name, context, request=request)
         return JsonResponse(data)
