@@ -29,11 +29,11 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = 'django-insecure-h0-poj@ulxuzmy3ib8w4m#w#-ddnb&uxv5h$9dksu@%(=^g^xa'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Maintenance-mode: True = activated
 # https://github.com/fabiocaccamo/django-maintenance-mode
-MAINTENANCE_MODE = None
+MAINTENANCE_MODE =None 
 
 ALLOWED_HOSTS = ['*']
 
